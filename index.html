@@ -906,13 +906,16 @@ footer a:hover { color: rgba(255,255,255,0.7); }
         </ul>
         <form id="hero-guide-form" onsubmit="handleSubmit(event,'hero-guide-form','hero-guide-success')">
           <div class="form-field">
-            <input type="text" name="name" placeholder="Your first name" required autocomplete="given-name">
+            <input type="text" name="name" placeholder="Your first name" required autocomplete="given-name" data-validate="name" data-error-required="Please enter your first name.">
+            <div class="error-msg"></div>
           </div>
           <div class="form-field">
-            <input type="tel" name="phone" placeholder="Phone number" required autocomplete="tel">
+            <input type="tel" name="phone" placeholder="Phone number" required autocomplete="tel" data-validate="phone" data-error-required="Please enter your phone number.">
+            <div class="error-msg"></div>
           </div>
           <div class="form-field">
-            <input type="email" name="email" placeholder="Email address" required autocomplete="email">
+            <input type="email" name="email" placeholder="Email address" required autocomplete="email" data-validate="email" data-error-required="Please enter your email address.">
+            <div class="error-msg"></div>
           </div>
           <div class="form-field">
             <input type="text" name="city" placeholder="Your city in Alameda County">
@@ -922,8 +925,10 @@ footer a:hover { color: rgba(255,255,255,0.7); }
         </form>
         <div class="form-success-state" id="hero-guide-success">
           <div class="s-icon">✅</div>
-          <h3>Guide is on its way!</h3>
-          <p>Check your email. Want to talk now instead?</p>
+          <h3>Your guide is ready!</h3>
+          <p>It should open automatically. If not, click below:</p>
+          <a id="guide-download-btn" href="https://drive.google.com/file/d/1Q3fWSFd4qofkmRL7X3mohoc9a6tiEi1W/view?usp=sharing" target="_blank" class="btn-primary" style="font-size:14px; padding:12px 20px; margin-bottom:12px; display:inline-flex;">📄 Download Your Free Guide</a>
+          <p style="font-size:12px; color:#b0a898; margin-top:4px;">Want to talk through your situation?</p>
           <a href="tel:5105613700" class="btn-primary" onclick="trackCall('post-form-hero')" style="font-size:15px; padding:13px 20px;">📞 Call 510-561-3700</a>
         </div>
       </div>
@@ -1251,9 +1256,12 @@ footer a:hover { color: rgba(255,255,255,0.7); }
       <p class="lead-text">No commitment. No pressure. Just a real conversation about your options. You can always say no.</p>
       <form id="main-cta-form" onsubmit="handleSubmit(event,'main-cta-form','main-cta-success')">
         <div class="cta-form">
-          <input class="cta-input" type="text" name="name" placeholder="Your name" required autocomplete="name">
-          <input class="cta-input" type="tel" name="phone" placeholder="Best phone number to reach you" required autocomplete="tel">
-          <input class="cta-input" type="email" name="email" placeholder="Email address" autocomplete="email">
+          <input class="cta-input" type="text" name="name" placeholder="Your name" required autocomplete="name" data-validate="name" data-error-required="Please enter your name.">
+          <div class="error-msg" style="color:#ffaaaa;"></div>
+          <input class="cta-input" type="tel" name="phone" placeholder="Best phone number to reach you" required autocomplete="tel" data-validate="phone" data-error-required="Please enter your phone number.">
+          <div class="error-msg" style="color:#ffaaaa;"></div>
+          <input class="cta-input" type="email" name="email" placeholder="Email address" required autocomplete="email" data-validate="email" data-error-required="Please enter your email address.">
+          <div class="error-msg" style="color:#ffaaaa;"></div>
           <input class="cta-input" type="text" name="address" placeholder="Property address (optional — we won't share it)" autocomplete="street-address">
           <select class="cta-input" name="situation">
             <option value="" disabled selected>What best describes your situation?</option>
@@ -1297,6 +1305,24 @@ footer a:hover { color: rgba(255,255,255,0.7); }
 <!-- ============================================================
      TRACKING + FORM LOGIC
      ============================================================ -->
+<style>
+/* ── FORM VALIDATION STYLES ── */
+.field-error {
+  border-color: #c0392b !important;
+  background: #fff8f8 !important;
+}
+.error-msg {
+  font-size: 12px;
+  color: #c0392b;
+  margin-top: -6px;
+  margin-bottom: 8px;
+  font-family: 'Mulish', sans-serif;
+  display: none;
+  padding-left: 2px;
+}
+.error-msg.visible { display: block; }
+</style>
+
 <script>
 // ── CALL TRACKING ──────────────────────────────────────────────
 function trackCall(loc) {
@@ -1308,15 +1334,102 @@ function trackCall(loc) {
   }
 }
 
+// ── VALIDATION HELPERS ─────────────────────────────────────────
+function isValidEmail(email) {
+  // Must have text @ text . text — no consecutive dots, no spaces
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.trim());
+}
+
+function isValidPhone(phone) {
+  // Strip all non-digits, must have 10–11 digits (US numbers)
+  const digits = phone.replace(/\D/g, '');
+  return digits.length >= 10 && digits.length <= 11;
+}
+
+function isValidName(name) {
+  return name.trim().length >= 2;
+}
+
+function setError(input, msgEl, message) {
+  input.classList.add('field-error');
+  msgEl.textContent = message;
+  msgEl.classList.add('visible');
+}
+
+function clearError(input, msgEl) {
+  input.classList.remove('field-error');
+  msgEl.classList.remove('visible');
+}
+
+// Live clear errors as user types/fixes
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('input[data-validate]').forEach(input => {
+    const msgEl = input.nextElementSibling;
+    input.addEventListener('input', () => {
+      if (input.value.trim()) clearError(input, msgEl);
+    });
+    input.addEventListener('blur', () => {
+      validateField(input, msgEl);
+    });
+  });
+});
+
+function validateField(input, msgEl) {
+  const type = input.dataset.validate;
+  const val  = input.value.trim();
+  if (!val) {
+    setError(input, msgEl, input.dataset.errorRequired || 'This field is required.');
+    return false;
+  }
+  if (type === 'email' && !isValidEmail(val)) {
+    setError(input, msgEl, 'Please enter a valid email address (e.g. name@example.com).');
+    return false;
+  }
+  if (type === 'phone' && !isValidPhone(val)) {
+    setError(input, msgEl, 'Please enter a valid 10-digit US phone number.');
+    return false;
+  }
+  if (type === 'name' && !isValidName(val)) {
+    setError(input, msgEl, 'Please enter your first name.');
+    return false;
+  }
+  clearError(input, msgEl);
+  return true;
+}
+
+function validateForm(form) {
+  let valid = true;
+  form.querySelectorAll('input[data-validate]').forEach(input => {
+    const msgEl = input.nextElementSibling;
+    if (!validateField(input, msgEl)) valid = false;
+  });
+  return valid;
+}
+
 // ── FORM SUBMISSION ────────────────────────────────────────────
-// Using Formspree ID: xrejkgwa
-const ENDPOINT = 'https://formspree.io/f/xrejkgwa';
+// Formspree ID: xrejkgwa
+// GUIDE PDF LINK: Replace https://drive.google.com/file/d/1Q3fWSFd4qofkmRL7X3mohoc9a6tiEi1W/view?usp=sharing below with your
+// Google Drive share link once you upload the PDF there.
+// How to get the link:
+//   1. Upload ky-homeowner-guide.pdf to Google Drive
+//   2. Right-click → Share → "Anyone with the link" → Copy link
+//   3. Paste it below replacing https://drive.google.com/file/d/1Q3fWSFd4qofkmRL7X3mohoc9a6tiEi1W/view?usp=sharing
+const GUIDE_URL  = 'https://drive.google.com/file/d/1Q3fWSFd4qofkmRL7X3mohoc9a6tiEi1W/view?usp=sharing';
+const ENDPOINT   = 'https://formspree.io/f/xrejkgwa';
 
 async function handleSubmit(e, formId, successId) {
   e.preventDefault();
-  const form = document.getElementById(formId);
+  const form    = document.getElementById(formId);
   const success = document.getElementById(successId);
-  const btn = form.querySelector('button[type="submit"]');
+  const btn     = form.querySelector('button[type="submit"]');
+
+  // ── Run validation ──
+  if (!validateForm(form)) {
+    // Scroll to first error
+    const firstError = form.querySelector('.field-error');
+    if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
 
   const payload = Object.fromEntries(new FormData(form).entries());
   payload._source = formId;
@@ -1337,25 +1450,26 @@ async function handleSubmit(e, formId, successId) {
     // silently continue — show success regardless to avoid losing leads
   }
 
-  // Show success state
-  form.style.display = 'none';
+  // ── Show success + auto-download guide for guide forms ──
+  form.style.display  = 'none';
   success.style.display = 'block';
 
-  // Fire pixel + analytics
+  const isGuideForm = formId === 'hero-guide-form' || formId === 'bottom-ebook-form';
+  if (isGuideForm && GUIDE_URL) {
+    // Auto-open PDF in new tab after 800ms so it feels intentional
+    setTimeout(() => window.open(GUIDE_URL, '_blank'), 800);
+  }
+
+  // ── Fire tracking ──
   if (typeof fbq !== 'undefined') {
     fbq('track', 'Lead', {
-      content_name: formId === 'main-cta-form' ? 'consultation_request' : 'guide_download',
-      value: 75,
-      currency: 'USD'
+      content_name: isGuideForm ? 'guide_download' : 'consultation_request',
+      value: 75, currency: 'USD'
     });
-    if (formId === 'main-cta-form') fbq('track', 'SubmitApplication');
+    if (!isGuideForm) fbq('track', 'SubmitApplication');
   }
   if (typeof gtag !== 'undefined') {
-    gtag('event', 'generate_lead', {
-      event_category: 'form',
-      event_label: formId,
-      value: 75
-    });
+    gtag('event', 'generate_lead', { event_category: 'form', event_label: formId, value: 75 });
   }
 }
 
