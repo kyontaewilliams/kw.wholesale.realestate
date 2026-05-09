@@ -4,12 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KY Property Solutions — Help for Distressed Homeowners in Alameda County</title>
-<meta name="description" content="Facing foreclosure, tax liens, or financial hardship in Alameda County? KY Property Solutions helps homeowners understand their options and find a path forward. Free guide + free consultation.">
+<meta name="description" content="Facing foreclosure, tax liens, or financial hardship in Alameda County? KY Property Solutions helps homeowners understand their options. Free guide + free consultation.">
 
-<!-- ============================================================
-     GOOGLE TAG — Replace G-XXXXXXXXXX with your Measurement ID
-     Create yours FREE at analytics.google.com
-     ============================================================ -->
+<!-- Google Tag -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PE4JHZ4TN2"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -18,19 +15,13 @@
   gtag('config', 'G-PE4JHZ4TN2');
 </script>
 
-<!-- ============================================================
-     META PIXEL — Replace YOUR_PIXEL_ID with your Pixel ID
-     Create yours FREE at business.facebook.com → Events Manager
-     ============================================================ -->
+<!-- Meta Pixel -->
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '954200090826689');
 fbq('track', 'PageView');
 </script>
@@ -39,1459 +30,546 @@ src="https://www.facebook.com/tr?id=954200090826689&ev=PageView&noscript=1"/></n
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&family=Mulish:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --forest:   #6b1f2a;
-  --forest2:  #8a2a38;
-  --sage:     #9e4a58;
-  --sage-lt:  #c47a88;
-  --cream:    #faf6f0;
-  --warm:     #f5ede0;
-  --amber:    #7a1f2e;
-  --amber-lt: #9e3345;
-  --text:     #1a1410;
-  --muted:    #6b5a50;
-  --border:   #ddd0c0;
-  --white:    #ffffff;
-  --red-soft: #6b1f2a;
-  --alert-bg: #fdf5ee;
-  --alert-bd: #e8c8b0;
-  --beige:    #ede0cc;
-  --beige2:   #e0cfb8;
+  --burg:    #6b1f2a;
+  --burg2:   #8a2a38;
+  --burg3:   #4d1520;
+  --cream:   #faf6f0;
+  --warm:    #f3ead8;
+  --beige:   #e8dcc8;
+  --beige2:  #d4c4aa;
+  --blush:   #c47a88;
+  --text:    #1c1410;
+  --muted:   #6b5a50;
+  --border:  #ddd0bc;
+  --white:   #ffffff;
 }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Jost',sans-serif;font-weight:400;color:var(--text);background:var(--cream);line-height:1.7;overflow-x:hidden;}
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+/* TOP BAR */
+.topbar{background:var(--burg3);color:rgba(255,255,255,0.85);text-align:center;padding:11px 20px;font-size:13px;letter-spacing:0.01em;}
+.topbar a{color:#e8a8b4;font-weight:600;text-decoration:none;}
+.topbar a:hover{text-decoration:underline;}
 
-body {
-  font-family: 'Mulish', sans-serif;
-  font-weight: 400;
-  color: var(--text);
-  background: var(--cream);
-  line-height: 1.7;
-  overflow-x: hidden;
-}
+/* NAV */
+nav{background:var(--white);border-bottom:2px solid var(--burg);padding:16px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,0.06);}
+.logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--burg);line-height:1.1;}
+.logo span{display:block;font-size:10px;font-weight:400;font-family:'Jost',sans-serif;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin-top:2px;}
+.nav-phone{background:var(--burg);color:var(--white);padding:10px 22px;font-size:14px;font-weight:600;text-decoration:none;letter-spacing:0.02em;transition:background 0.2s;}
+.nav-phone:hover{background:var(--burg2);}
 
-/* ── EMPATHY BANNER ── */
-.empathy-bar {
-  background: var(--forest);
-  color: rgba(255,255,255,0.85);
-  text-align: center;
-  padding: 12px 24px;
-  font-size: 13.5px;
-  font-weight: 400;
-  letter-spacing: 0.01em;
-}
-.empathy-bar strong { color: #fff; font-weight: 700; }
-.empathy-bar a { color: #e8a8b4; text-decoration: none; font-weight: 700; }
-.empathy-bar a:hover { text-decoration: underline; }
+/* HERO */
+.hero{background:var(--burg);color:var(--white);padding:72px 40px 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 10% 90%,rgba(196,122,136,0.15) 0%,transparent 55%),radial-gradient(ellipse at 90% 10%,rgba(77,21,32,0.6) 0%,transparent 50%);pointer-events:none;}
+.hero-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 340px;gap:60px;align-items:start;position:relative;z-index:1;}
+.hero-tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#e8a8b4;margin-bottom:20px;}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,56px);font-weight:700;line-height:1.1;color:var(--white);margin-bottom:18px;letter-spacing:-0.01em;}
+h1 em{font-style:italic;color:#e8c8b0;}
+.hero-intro{font-size:16px;color:rgba(255,255,255,0.75);margin-bottom:14px;font-weight:300;line-height:1.75;max-width:480px;}
+.hero-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:rgba(255,255,255,0.6);padding-left:16px;border-left:3px solid var(--blush);margin:20px 0 32px;line-height:1.55;max-width:440px;}
+.hero-btns{display:flex;flex-direction:column;gap:10px;max-width:360px;}
+.btn-main{display:flex;align-items:center;justify-content:center;gap:8px;background:#c8843a;color:var(--white);padding:15px 24px;font-size:15px;font-weight:600;text-decoration:none;transition:background 0.2s,transform 0.15s;border:none;cursor:pointer;font-family:'Jost',sans-serif;letter-spacing:0.02em;}
+.btn-main:hover{background:#d9954a;transform:translateY(-1px);}
+.btn-outline{display:flex;align-items:center;justify-content:center;gap:8px;background:transparent;color:var(--white);padding:14px 24px;font-size:15px;font-weight:500;text-decoration:none;border:1.5px solid rgba(255,255,255,0.3);transition:border-color 0.2s,background 0.2s;letter-spacing:0.02em;}
+.btn-outline:hover{border-color:rgba(255,255,255,0.7);background:rgba(255,255,255,0.06);}
 
-/* ── NAV ── */
-nav {
-  background: var(--white);
-  border-bottom: 2px solid var(--forest);
-  padding: 18px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
-}
-.nav-logo {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.15;
-}
-.nav-logo-main {
-  font-family: 'Fraunces', serif;
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--forest);
-  letter-spacing: -0.01em;
-}
-.nav-logo-main span { color: var(--amber); }.nav-logo-sub {
-  font-size: 11px;
-  color: var(--muted);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-weight: 600;
-}
-.nav-right { display: flex; align-items: center; gap: 20px; }
-.nav-tagline {
-  font-size: 13px;
-  color: var(--muted);
-  font-style: italic;
-  font-family: 'Fraunces', serif;
-}
-.nav-phone {
-  background: var(--forest);
-  color: var(--white);
-  padding: 11px 22px;
-  font-size: 14px;
-  font-weight: 700;
-  text-decoration: none;
-  letter-spacing: 0.03em;
-  transition: background 0.2s;
-  white-space: nowrap;
-}
-.nav-phone:hover { background: var(--forest2); }
+/* FORM CARD */
+.form-card{background:var(--white);border:1px solid var(--border);padding:28px 24px;box-shadow:0 16px 48px rgba(0,0,0,0.22);position:relative;top:16px;animation:rise 0.6s ease both 0.15s;}
+@keyframes rise{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.card-label{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--blush);margin-bottom:6px;}
+.card-title{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--burg);line-height:1.25;margin-bottom:6px;}
+.card-desc{font-size:12.5px;color:var(--muted);margin-bottom:18px;line-height:1.5;}
+.f-field{margin-bottom:9px;}
+.f-field input,.f-field select{width:100%;padding:11px 13px;border:1.5px solid var(--border);background:var(--cream);font-family:'Jost',sans-serif;font-size:13.5px;color:var(--text);outline:none;transition:border-color 0.2s;-webkit-appearance:none;}
+.f-field input:focus,.f-field select:focus{border-color:var(--burg);background:var(--white);}
+.f-field input::placeholder{color:#b0a090;}
+.f-field select{color:var(--muted);}
+.f-field select option{color:var(--text);}
+.field-error{border-color:#c0392b !important;background:#fff8f8 !important;}
+.error-msg{font-size:11px;color:#c0392b;margin-top:-5px;margin-bottom:6px;display:none;}
+.error-msg.show{display:block;}
+.btn-submit{width:100%;background:var(--burg);color:var(--white);border:none;padding:13px;font-family:'Jost',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;transition:background 0.2s;margin-top:4px;}
+.btn-submit:hover{background:var(--burg2);}
+.form-note{font-size:11px;color:#b0a090;text-align:center;margin-top:8px;line-height:1.5;}
+.form-success{display:none;text-align:center;padding:16px 0;}
+.form-success .s-icon{font-size:36px;margin-bottom:10px;}
+.form-success h3{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--burg);margin-bottom:8px;}
+.form-success p{font-size:12.5px;color:var(--muted);margin-bottom:14px;line-height:1.5;}
+.dl-btn{display:inline-flex;align-items:center;gap:6px;background:var(--burg);color:var(--white);padding:11px 18px;font-size:13px;font-weight:600;text-decoration:none;margin-bottom:10px;transition:background 0.2s;}
+.dl-btn:hover{background:var(--burg2);}
+.call-link{display:block;color:var(--burg);font-weight:600;font-size:14px;margin-top:8px;text-decoration:none;}
 
-/* ── HERO ── */
-.hero {
-  background: var(--forest);
-  color: var(--white);
-  padding: 80px 40px 0;
-  position: relative;
-  overflow: hidden;
-}
-.hero::after {
-  content: '';
-  display: block;
-  height: 60px;
-  background: linear-gradient(to bottom right, var(--forest) 49%, var(--cream) 50%);
-}
-.hero-bg-texture {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at 15% 80%, rgba(196,122,136,0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 85% 20%, rgba(122,31,46,0.1) 0%, transparent 45%);
-  pointer-events: none;
-}
-.hero-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 360px;
-  gap: 64px;
-  align-items: start;
-  position: relative;
-  z-index: 1;
-}
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(196,122,136,0.18);
-  border: 1px solid rgba(196,122,136,0.35);
-  color: #e8a8b4;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 6px 14px;
-  margin-bottom: 24px;
-}
-h1 {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(32px, 4.5vw, 52px);
-  font-weight: 700;
-  line-height: 1.15;
-  color: var(--white);
-  margin-bottom: 22px;
-  letter-spacing: -0.01em;
-}
-h1 em {
-  font-style: italic;
-  color: var(--sage-lt);
-}
-.hero-intro {
-  font-size: 17px;
-  color: rgba(255,255,255,0.78);
-  margin-bottom: 12px;
-  font-weight: 300;
-  line-height: 1.75;
-}
-.hero-human {
-  font-family: 'Fraunces', serif;
-  font-style: italic;
-  font-size: 18px;
-  color: rgba(255,255,255,0.65);
-  margin-bottom: 36px;
-  padding-left: 16px;
-  border-left: 3px solid var(--sage-lt);
-  line-height: 1.5;
-}
-.hero-options {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 40px;
-}
-.hero-option {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  font-size: 15px;
-  color: rgba(255,255,255,0.85);
-  line-height: 1.5;
-}
-.option-dot {
-  width: 8px;
-  height: 8px;
-  background: #e8a8b4;
-  border-radius: 50%;
-  flex-shrink: 0;
-  margin-top: 8px;
-}
-.hero-cta-row {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  max-width: 380px;
-}
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background: var(--amber);
-  color: var(--white);
-  padding: 16px 28px;
-  font-size: 16px;
-  font-weight: 700;
-  text-decoration: none;
-  letter-spacing: 0.02em;
-  transition: background 0.2s, transform 0.15s;
-  box-shadow: 0 4px 20px rgba(200,132,58,0.35);
-  border: none;
-  cursor: pointer;
-  font-family: 'Mulish', sans-serif;
-  width: 100%;
-}
-.btn-primary:hover { background: var(--amber-lt); transform: translateY(-2px); }
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background: transparent;
-  color: var(--white);
-  padding: 15px 28px;
-  font-size: 15px;
-  font-weight: 600;
-  text-decoration: none;
-  letter-spacing: 0.02em;
-  border: 1.5px solid rgba(255,255,255,0.3);
-  transition: border-color 0.2s, background 0.2s;
-  width: 100%;
-}
-.btn-secondary:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.06); }
+/* SECTIONS */
+section{padding:72px 40px;}
+.inner{max-width:900px;margin:0 auto;}
+.sec-label{font-size:10.5px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--burg);margin-bottom:10px;display:block;}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,40px);font-weight:700;color:var(--burg3);line-height:1.15;margin-bottom:12px;letter-spacing:-0.01em;}
+.sec-lead{font-size:16px;color:var(--muted);max-width:580px;line-height:1.75;margin-bottom:48px;}
 
-/* ── GUIDE CARD ── */
-.guide-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  box-shadow: 0 12px 48px rgba(0,0,0,0.2);
-  overflow: hidden;
-  animation: riseIn 0.65s ease both;
-  animation-delay: 0.15s;
-  position: relative;
-  top: 24px;
-}
-@keyframes riseIn {
-  from { opacity: 0; transform: translateY(28px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.guide-card-header {
-  background: var(--amber);
-  padding: 18px 24px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.guide-card-header-icon { font-size: 24px; }
-.guide-card-header-text {}
-.guide-card-label {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.8);
-  margin-bottom: 2px;
-}
-.guide-card-title {
-  font-family: 'Fraunces', serif;
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--white);
-  line-height: 1.25;
-}
-.guide-card-body { padding: 24px; }
-.guide-card-desc {
-  font-size: 13.5px;
-  color: var(--muted);
-  margin-bottom: 18px;
-  line-height: 1.6;
-}
-.guide-contents {
-  list-style: none;
-  margin-bottom: 22px;
-}
-.guide-contents li {
-  font-size: 12.5px;
-  color: var(--text);
-  padding: 6px 0;
-  border-bottom: 1px solid #f0ede8;
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  line-height: 1.4;
-}
-.guide-contents li:last-child { border-bottom: none; }
-.guide-check {
-  color: var(--amber);
-  font-weight: 900;
-  font-size: 13px;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-.form-field {
-  margin-bottom: 10px;
-}
-.form-field input {
-  width: 100%;
-  padding: 12px 14px;
-  border: 1.5px solid var(--border);
-  background: var(--cream);
-  font-family: 'Mulish', sans-serif;
-  font-size: 14px;
-  color: var(--text);
-  outline: none;
-  transition: border-color 0.2s, background 0.2s;
-  -webkit-appearance: none;
-}
-.form-field input:focus {
-  border-color: var(--amber);
-  background: var(--white);
-}
-.form-field input::placeholder { color: #b0a898; }
-.btn-guide-submit {
-  width: 100%;
-  background: var(--forest);
-  color: var(--white);
-  border: none;
-  padding: 14px;
-  font-family: 'Mulish', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background 0.2s;
-  margin-top: 4px;
-}
-.btn-guide-submit:hover { background: var(--forest2); }
-.form-note {
-  font-size: 11px;
-  color: #b0a898;
-  text-align: center;
-  margin-top: 10px;
-  line-height: 1.5;
-}
-.form-success-state {
-  display: none;
-  text-align: center;
-  padding: 20px 0 8px;
-}
-.form-success-state .s-icon { font-size: 36px; margin-bottom: 10px; }
-.form-success-state h3 {
-  font-family: 'Fraunces', serif;
-  font-size: 19px;
-  color: var(--forest);
-  margin-bottom: 8px;
-}
-.form-success-state p { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+/* SITUATIONS */
+.sit-section{background:var(--white);}
+.sit-grid{display:flex;flex-direction:column;gap:3px;}
+.sit-card{display:grid;grid-template-columns:56px 1fr;background:var(--cream);border:1px solid var(--border);border-left:4px solid var(--burg);transition:box-shadow 0.2s,transform 0.2s;overflow:hidden;}
+.sit-card:hover{box-shadow:0 6px 24px rgba(107,31,42,0.09);transform:translateX(3px);}
+.sit-card.soft{border-left-color:var(--blush);}
+.sit-icon-col{background:var(--burg);display:flex;align-items:center;justify-content:center;font-size:22px;padding:28px 0;}
+.sit-card.soft .sit-icon-col{background:var(--blush);}
+.sit-body{padding:22px 24px;}
+.sit-title{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:700;color:var(--burg3);margin-bottom:4px;}
+.sit-question{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--blush);margin-bottom:8px;}
+.sit-text{font-size:14px;color:var(--muted);line-height:1.6;}
+.sit-cta{display:inline-block;margin-top:10px;font-size:12.5px;font-weight:600;color:var(--burg);text-decoration:none;border-bottom:1.5px solid var(--beige2);padding-bottom:1px;letter-spacing:0.02em;transition:border-color 0.2s,color 0.2s;}
+.sit-cta:hover{color:var(--burg2);border-color:var(--blush);}
 
-/* ── SECTION BASE ── */
-section { padding: 80px 40px; }
-.inner { max-width: 900px; margin: 0 auto; }
-.section-label {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--amber);
-  margin-bottom: 10px;
-  display: block;
-}
-h2 {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(26px, 3.5vw, 38px);
-  font-weight: 700;
-  color: var(--forest);
-  line-height: 1.2;
-  margin-bottom: 14px;
-  letter-spacing: -0.01em;
-}
-.lead-text {
-  font-size: 16.5px;
-  color: var(--muted);
-  max-width: 600px;
-  line-height: 1.75;
-  margin-bottom: 48px;
-}
+/* OPTIONS */
+.options-section{background:var(--burg);}
+.opt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
+.opt-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:26px 22px;}
+.opt-card.featured{background:rgba(196,122,136,0.1);border-color:var(--blush);}
+.opt-tag{font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:12px;display:block;}
+.opt-card.featured .opt-tag{color:#e8a8b4;}
+.opt-card:not(.featured) .opt-tag{color:rgba(255,255,255,0.35);}
+.opt-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--white);margin-bottom:14px;}
+.opt-list{list-style:none;}
+.opt-list li{font-size:13px;color:rgba(255,255,255,0.65);padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:flex-start;gap:7px;line-height:1.4;}
+.opt-list li:last-child{border-bottom:none;}
+.li-y{color:#a8d8a8;font-size:12px;flex-shrink:0;margin-top:1px;}
+.li-n{color:#e8a8a8;font-size:12px;flex-shrink:0;margin-top:1px;}
+.li-m{color:rgba(255,255,255,0.3);font-size:12px;flex-shrink:0;margin-top:1px;}
 
-/* ── SITUATION CARDS (main scenarios) ── */
-.situations { background: var(--white); }
-.sit-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3px;
-}
-.sit-card {
-  background: var(--cream);
-  border: 1px solid var(--border);
-  padding: 32px 28px;
-  transition: border-color 0.25s, transform 0.2s, box-shadow 0.2s;
-  cursor: default;
-}
-.sit-card:hover {
-  border-color: var(--amber);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 28px rgba(107,31,42,0.1);
-}
-.sit-card.urgent { border-left: 4px solid var(--red-soft); }
-.sit-card.moderate { border-left: 4px solid var(--amber); }
-.sit-card.life { border-left: 4px solid var(--sage); }
-.sit-icon { font-size: 30px; margin-bottom: 14px; }
-.sit-title {
-  font-family: 'Fraunces', serif;
-  font-size: 19px;
-  font-weight: 700;
-  color: var(--forest);
-  margin-bottom: 8px;
-  line-height: 1.2;
-}
-.sit-question {
-  font-style: italic;
-  font-size: 14px;
-  color: var(--amber);
-  margin-bottom: 12px;
-  font-family: 'Fraunces', serif;
-  font-weight: 400;
-}
-.sit-body {
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.65;
-  margin-bottom: 16px;
-}
-.sit-link {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--forest);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  letter-spacing: 0.02em;
-  border-bottom: 1.5px solid var(--amber-lt);
-  padding-bottom: 1px;
-  transition: color 0.2s, border-color 0.2s;
-}
-.sit-link:hover { color: var(--amber); border-color: var(--amber); }
+/* SURPLUS */
+.surplus-section{background:var(--warm);}
+.surplus-cards{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-bottom:32px;}
+.surplus-card{background:var(--white);border:1px solid var(--border);padding:28px 24px;}
+.surplus-card-title{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--burg3);margin-bottom:10px;}
+.surplus-card-text{font-size:14px;color:var(--muted);line-height:1.7;}
+.surplus-cta-bar{background:var(--burg);padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.surplus-cta-text h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:6px;}
+.surplus-cta-text p{font-size:14px;color:rgba(255,255,255,0.65);}
+.surplus-btn{background:#c8843a;color:#fff;padding:14px 26px;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:background 0.2s;}
+.surplus-btn:hover{background:#d9954a;}
 
-/* ── TIMELINE ALERT ── */
-.timeline-alert {
-  background: var(--alert-bg);
-  border: 1.5px solid var(--alert-bd);
-  padding: 24px 28px;
-  margin: 48px 0 0;
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-}
-.alert-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
-.alert-title {
-  font-family: 'Fraunces', serif;
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--red-soft);
-  margin-bottom: 6px;
-}
-.alert-body { font-size: 14px; color: var(--text); line-height: 1.65; }
-.alert-body strong { color: var(--red-soft); }
+/* BIO */
+.bio-section{background:var(--warm);}
+.bio-grid{display:grid;grid-template-columns:200px 1fr;gap:52px;align-items:start;}
+.bio-photo{background:var(--burg);aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.bio-photo::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 12px,rgba(196,122,136,0.07) 12px,rgba(196,122,136,0.07) 13px);}
+.photo-hint{font-size:12px;color:rgba(255,255,255,0.4);text-align:center;padding:0 20px;position:relative;z-index:1;font-style:italic;}
+.bio-name-tag{background:var(--burg);padding:12px 16px;}
+.bio-name-tag strong{display:block;font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:700;color:var(--white);}
+.bio-name-tag span{font-size:11px;color:#e8a8b4;letter-spacing:0.06em;}
+.bio-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--burg);line-height:1.45;padding-left:18px;border-left:3px solid var(--blush);margin-bottom:20px;}
+.bio-text{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:14px;}
+.bio-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.bio-pill{background:var(--white);border:1px solid var(--border);padding:7px 13px;font-size:12px;font-weight:600;color:var(--burg3);display:flex;align-items:center;gap:5px;}
 
-/* ── OPTIONS COMPARISON ── */
-.options-section { background: var(--forest); color: var(--white); }
-.options-section h2 { color: var(--white); }
-.options-section .lead-text { color: rgba(255,255,255,0.65); }
-.options-section .section-label { color: #e8a8b4; }
-.options-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3px;
-}
-.option-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.1);
-  padding: 28px 24px;
-}
-.option-card.highlight {
-  background: rgba(196,122,136,0.12);
-  border-color: var(--sage-lt);
-}
-.option-tag {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-  display: block;
-}
-.option-card.highlight .option-tag { color: #e8a8b4; }
-.option-card:not(.highlight) .option-tag { color: rgba(255,255,255,0.4); }
-.option-name {
-  font-family: 'Fraunces', serif;
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--white);
-  margin-bottom: 16px;
-}
-.option-list { list-style: none; }
-.option-list li {
-  font-size: 13px;
-  color: rgba(255,255,255,0.7);
-  padding: 6px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  line-height: 1.4;
-}
-.option-list li:last-child { border-bottom: none; }
-.li-check { color: #e8a8b4; flex-shrink: 0; font-size: 13px; }
-.li-x { color: #e07070; flex-shrink: 0; font-size: 13px; }
-.li-neutral { color: rgba(255,255,255,0.35); flex-shrink: 0; font-size: 13px; }
+/* BOTTOM CTA */
+.cta-section{background:var(--burg3);}
+.cta-inner{max-width:560px;margin:0 auto;text-align:center;}
+.cta-call{display:flex;align-items:center;justify-content:center;gap:10px;border:2px solid rgba(255,255,255,0.25);color:var(--white);padding:16px 28px;font-size:20px;font-weight:700;text-decoration:none;letter-spacing:0.03em;transition:border-color 0.2s,background 0.2s;margin-bottom:16px;}
+.cta-call:hover{border-color:var(--blush);background:rgba(196,122,136,0.08);}
+.cta-note{font-size:13px;color:rgba(255,255,255,0.4);font-style:italic;font-family:'Cormorant Garamond',serif;margin-bottom:36px;}
+.cta-form{display:flex;flex-direction:column;gap:9px;text-align:left;}
+.cta-input{padding:13px 16px;border:1.5px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.07);color:var(--white);font-family:'Jost',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s;-webkit-appearance:none;width:100%;}
+.cta-input::placeholder{color:rgba(255,255,255,0.35);}
+.cta-input:focus{border-color:var(--blush);}
+.cta-input option{background:var(--burg3);color:var(--white);}
+.cta-input.field-error{border-color:#ff8080 !important;}
+.cta-err{font-size:11px;color:#ffaaaa;display:none;margin-top:-5px;margin-bottom:4px;}
+.cta-err.show{display:block;}
+.cta-reassure{text-align:center;font-size:12px;color:rgba(255,255,255,0.35);margin-top:14px;font-style:italic;font-family:'Cormorant Garamond',serif;}
 
-/* ── PROCESS ── */
-.process-section { background: var(--warm); }
-.process-steps {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 3px;
-  margin-bottom: 48px;
-}
-.process-step {
-  background: var(--white);
-  border: 1px solid var(--border);
-  padding: 28px 22px;
-  text-align: center;
-}
-.step-circle {
-  width: 44px;
-  height: 44px;
-  background: var(--forest);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 16px;
-  font-family: 'Fraunces', serif;
-  font-weight: 700;
-  font-size: 18px;
-  color: var(--white);
-}
-.step-title-sm {
-  font-family: 'Fraunces', serif;
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--forest);
-  margin-bottom: 8px;
-}
-.step-desc-sm { font-size: 13px; color: var(--muted); line-height: 1.55; }
+/* FOOTER */
+footer{background:#0e1208;color:rgba(255,255,255,0.3);padding:28px 40px;text-align:center;font-size:12px;line-height:1.8;}
+footer a{color:rgba(255,255,255,0.35);text-decoration:none;}
+footer strong{color:rgba(255,255,255,0.55);}
+.footer-disc{max-width:640px;margin:10px auto 0;font-size:10.5px;color:rgba(255,255,255,0.18);line-height:1.7;}
 
-/* ── ABOUT / TRUST ── */
-.about-section { background: var(--white); }
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: center;
-}
-.about-left {}
-.about-portrait {
-  background: var(--forest);
-  aspect-ratio: 4/3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-.about-portrait::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    45deg, transparent, transparent 14px,
-    rgba(196,122,136,0.08) 14px, rgba(196,122,136,0.08) 15px
-  );
-}
-.portrait-text {
-  font-family: 'Fraunces', serif;
-  font-size: 16px;
-  color: rgba(255,255,255,0.5);
-  font-style: italic;
-  text-align: center;
-  padding: 0 32px;
-  position: relative;
-  z-index: 1;
-}
-.about-name-plate {
-  background: var(--amber);
-  padding: 14px 22px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.about-name {
-  font-family: 'Fraunces', serif;
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--white);
-}
-.about-title-sm { font-size: 12px; color: rgba(255,255,255,0.75); margin-top: 2px; }
-.about-right {}
-.about-quote {
-  font-family: 'Fraunces', serif;
-  font-style: italic;
-  font-size: 20px;
-  color: var(--forest);
-  line-height: 1.5;
-  margin-bottom: 20px;
-  padding-left: 20px;
-  border-left: 3px solid var(--amber-lt);
-}
-.about-body {
-  font-size: 15px;
-  color: var(--muted);
-  line-height: 1.75;
-  margin-bottom: 20px;
-}
-.trust-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 24px;
-}
-.trust-pill {
-  background: var(--cream);
-  border: 1px solid var(--border);
-  padding: 8px 14px;
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--forest);
-  letter-spacing: 0.02em;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-/* ── CITIES ── */
-.cities-section { background: var(--cream); }
-.cities-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 3px;
-  margin-bottom: 32px;
-}
-.city-item {
-  background: var(--white);
-  border: 1px solid var(--border);
-  padding: 14px 18px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--forest);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.city-dot {
-  width: 6px;
-  height: 6px;
-  background: var(--amber-lt);
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-/* ── BOTTOM FORM ── */
-.cta-section { background: var(--forest); }
-.cta-inner {
-  max-width: 640px;
-  margin: 0 auto;
-  text-align: center;
-}
-.cta-section h2 { color: var(--white); margin-bottom: 12px; }
-.cta-section .lead-text { color: rgba(255,255,255,0.6); margin: 0 auto 40px; }
-.cta-section .section-label { color: #e8a8b4; }
-.cta-form { display: flex; flex-direction: column; gap: 10px; text-align: left; }
-.cta-input {
-  padding: 14px 18px;
-  border: 1.5px solid rgba(255,255,255,0.15);
-  background: rgba(255,255,255,0.07);
-  color: var(--white);
-  font-family: 'Mulish', sans-serif;
-  font-size: 15px;
-  outline: none;
-  transition: border-color 0.2s, background 0.2s;
-  -webkit-appearance: none;
-  width: 100%;
-}
-.cta-input::placeholder { color: rgba(255,255,255,0.35); }
-.cta-input:focus { border-color: #e8a8b4; background: rgba(255,255,255,0.1); }
-.cta-input option { background: var(--forest); color: var(--white); }
-.cta-or {
-  text-align: center;
-  color: rgba(255,255,255,0.35);
-  font-size: 14px;
-  padding: 4px 0;
-  font-style: italic;
-  font-family: 'Fraunces', serif;
-}
-.btn-call-big {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  border: 2px solid rgba(255,255,255,0.3);
-  color: var(--white);
-  padding: 16px;
-  font-size: 19px;
-  font-weight: 700;
-  text-decoration: none;
-  letter-spacing: 0.03em;
-  transition: border-color 0.2s, background 0.2s;
-}
-.btn-call-big:hover { border-color: #e8a8b4; background: rgba(196,122,136,0.1); }
-.cta-reassurance {
-  text-align: center;
-  font-size: 13px;
-  color: rgba(255,255,255,0.4);
-  margin-top: 16px;
-  font-style: italic;
-  font-family: 'Fraunces', serif;
-}
-
-/* ── FOOTER ── */
-footer {
-  background: #0d1f17;
-  color: rgba(255,255,255,0.35);
-  padding: 32px 40px;
-  text-align: center;
-  font-size: 12.5px;
-  line-height: 1.8;
-}
-footer strong { color: rgba(255,255,255,0.6); }
-footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
-footer a:hover { color: rgba(255,255,255,0.7); }
-.footer-disclaimer {
-  max-width: 680px;
-  margin: 12px auto 0;
-  font-size: 11px;
-  color: rgba(255,255,255,0.2);
-  line-height: 1.7;
-}
-
-/* ── RESPONSIVE ── */
-@media (max-width: 720px) {
-  section { padding: 56px 20px; }
-  nav { padding: 14px 20px; }
-  .hero { padding: 48px 20px 0; }
-  .nav-right .nav-tagline { display: none; }
-  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
-  .guide-card { position: static; }
-  .sit-grid { grid-template-columns: 1fr; }
-  .options-grid { grid-template-columns: 1fr; }
-  .process-steps { grid-template-columns: repeat(2, 1fr); }
-  .about-grid { grid-template-columns: 1fr; gap: 36px; }
-  .cities-grid { grid-template-columns: repeat(2, 1fr); }
-  h1 { font-size: 30px; }
-  #surplus-funds .inner > div { grid-template-columns: 1fr !important; gap: 36px !important; }
+/* RESPONSIVE */
+@media(max-width:700px){
+  nav{padding:14px 20px;}
+  section{padding:52px 20px;}
+  .hero{padding:48px 20px 56px;}
+  .hero-inner{grid-template-columns:1fr;gap:36px;}
+  .form-card{position:static;}
+  .opt-grid{grid-template-columns:1fr;}
+  .surplus-cards{grid-template-columns:1fr;}
+  .bio-grid{grid-template-columns:1fr;}
+  .sit-card{grid-template-columns:44px 1fr;}
+  h1{font-size:34px;}
 }
 </style>
 </head>
 <body>
 
-<!-- EMPATHY TOP BAR -->
-<div class="empathy-bar">
-  If you're facing foreclosure or financial hardship, <strong>you are not alone</strong> — and you have more options than you think. &nbsp;<a href="tel:5105613700">Call us: 510-561-3700</a>
+<div class="topbar">
+  You are not alone — and you have more options than you think. &nbsp;
+  <a href="tel:5102555989">Call us free: 510-255-5989</a>
 </div>
 
-<!-- NAV -->
 <nav>
-  <div class="nav-logo">
-    <div class="nav-logo-main">KY <span>Property</span> Solutions</div>
-    <div class="nav-logo-sub">Alameda County, California</div>
+  <div class="logo">
+    KY Property Solutions
+    <span>Alameda County, California</span>
   </div>
-  <div class="nav-right">
-    <span class="nav-tagline">Here to help, not to pressure.</span>
-    <a href="tel:5105613700" class="nav-phone" onclick="trackCall('nav')">📞 510-561-3700</a>
-  </div>
+  <a href="tel:5102555989" class="nav-phone" onclick="trackCall('nav')">📞 510-255-5989</a>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-bg-texture"></div>
   <div class="hero-inner">
-    <!-- LEFT -->
     <div>
-      <div class="hero-eyebrow">🏡 Free Help for Alameda County Homeowners</div>
-      <h1>You Have Options.<br><em>Let's Find the<br>Right One Together.</em></h1>
-      <p class="hero-intro">
-        If you're facing foreclosure, falling behind on property taxes, going through a divorce, or simply need to sell quickly — this page was made for you.
-      </p>
-      <p class="hero-human">
-        "I'm not here to pressure you into anything. I'm here to make sure you understand every option available to you — so you can make the best decision for your family."
-      </p>
-      <div class="hero-options">
-        <div class="hero-option">
-          <span class="option-dot"></span>
-          <span>Facing foreclosure and don't know how much time you have left</span>
-        </div>
-        <div class="hero-option">
-          <span class="option-dot"></span>
-          <span>Behind on property taxes or facing a tax lien sale</span>
-        </div>
-        <div class="hero-option">
-          <span class="option-dot"></span>
-          <span>Property in poor condition you can't afford to fix</span>
-        </div>
-        <div class="hero-option">
-          <span class="option-dot"></span>
-          <span>Going through divorce and need to settle quickly</span>
-        </div>
-        <div class="hero-option">
-          <span class="option-dot"></span>
-          <span>Inherited a home you don't want to manage or maintain</span>
-        </div>
-        <div class="hero-option">
-          <span class="option-dot"></span>
-          <span>Tired of being a landlord and need a clean exit</span>
-        </div>
-        <div class="hero-option">
-          <span class="option-dot"></span>
-          <span>Already lost your home to foreclosure and may be owed surplus funds</span>
-        </div>
-      </div>
-      <div class="hero-cta-row">
-        <a href="#guide" class="btn-primary">📖 Get My Free Options Guide</a>
-        <a href="tel:5105613700" class="btn-secondary" onclick="trackCall('hero')">📞 Talk to Someone Now — 510-561-3700</a>
+      <div class="hero-tag">Free Help for Alameda County Homeowners</div>
+      <h1>You Have Options.<br><em>Let's Find the<br>Right One.</em></h1>
+      <p class="hero-intro">Whether you're facing foreclosure, falling behind on taxes, dealing with a distressed property, or ready to move on from a property you no longer want or need — there's a path forward. Let's talk through it.</p>
+      <p class="hero-quote">"I'm not here to pressure you. I'm here to make sure you know every option before it's too late."</p>
+      <div class="hero-btns">
+        <a href="https://drive.google.com/file/d/1Q3fWSFd4qofkmRL7X3mohoc9a6tiEi1W/view?usp=sharing" target="_blank" class="btn-main" onclick="trackDownload('hero')">
+          📘 Download My Free Options Guide
+        </a>
+        <a href="tel:5102555989" class="btn-outline" onclick="trackCall('hero')">
+          📞 Call Me Today — 510-255-5989
+        </a>
       </div>
     </div>
 
-    <!-- GUIDE CAPTURE CARD -->
-    <div class="guide-card" id="guide">
-      <div class="guide-card-header">
-        <div class="guide-card-header-icon">📘</div>
-        <div class="guide-card-header-text">
-          <div class="guide-card-label">Free Download · No Obligation</div>
-          <div class="guide-card-title">The Alameda County Homeowner's Guide to Financial Crisis &amp; Your Options</div>
+    <div class="form-card" id="contact">
+      <div class="card-label">Free · No Obligation</div>
+      <div class="card-title">Let's Talk About Your Situation</div>
+      <div class="card-desc">Fill this out and I'll reach out personally — usually within a few hours.</div>
+      <form id="hero-form" onsubmit="handleSubmit(event,'hero-form','hero-success')">
+        <div class="f-field">
+          <input type="text" name="name" placeholder="Your first name" required data-validate="name" autocomplete="given-name">
+          <div class="error-msg"></div>
         </div>
-      </div>
-      <div class="guide-card-body">
-        <p class="guide-card-desc">Real, plain-language information about what to do if you're facing any kind of housing-related financial pressure in California.</p>
-        <ul class="guide-contents">
-          <li><span class="guide-check">✓</span> How to stop foreclosure in California — step by step</li>
-          <li><span class="guide-check">✓</span> What happens at a tax lien sale &amp; how to avoid it</li>
-          <li><span class="guide-check">✓</span> Selling as-is vs. listing with an agent — the real numbers</li>
-          <li><span class="guide-check">✓</span> How to evaluate a cash offer fairly</li>
-          <li><span class="guide-check">✓</span> Your legal rights as a homeowner in California</li>
-          <li><span class="guide-check">✓</span> 3 questions to ask before signing anything</li>
-        </ul>
-        <form id="hero-guide-form" onsubmit="handleSubmit(event,'hero-guide-form','hero-guide-success')">
-          <div class="form-field">
-            <input type="text" name="name" placeholder="Your first name" required autocomplete="given-name" data-validate="name" data-error-required="Please enter your first name.">
-            <div class="error-msg"></div>
-          </div>
-          <div class="form-field">
-            <input type="tel" name="phone" placeholder="Phone number" required autocomplete="tel" data-validate="phone" data-error-required="Please enter your phone number.">
-            <div class="error-msg"></div>
-          </div>
-          <div class="form-field">
-            <input type="email" name="email" placeholder="Email address" required autocomplete="email" data-validate="email" data-error-required="Please enter your email address.">
-            <div class="error-msg"></div>
-          </div>
-          <div class="form-field">
-            <input type="text" name="city" placeholder="Your city in Alameda County">
-          </div>
-          <button type="submit" class="btn-guide-submit">Send My Free Guide →</button>
-          <p class="form-note">🔒 Your information is private. We will never sell or share it. No spam, ever.</p>
-        </form>
-        <div class="form-success-state" id="hero-guide-success">
-          <div class="s-icon">✅</div>
-          <h3>Your guide is ready!</h3>
-          <p>It should open automatically. If not, click below:</p>
-          <a id="guide-download-btn" href="https://drive.google.com/file/d/1Q3fWSFd4qofkmRL7X3mohoc9a6tiEi1W/view?usp=sharing" target="_blank" class="btn-primary" style="font-size:14px; padding:12px 20px; margin-bottom:12px; display:inline-flex;">📄 Download Your Free Guide</a>
-          <p style="font-size:12px; color:#b0a898; margin-top:4px;">Want to talk through your situation?</p>
-          <a href="tel:5105613700" class="btn-primary" onclick="trackCall('post-form-hero')" style="font-size:15px; padding:13px 20px;">📞 Call 510-561-3700</a>
+        <div class="f-field">
+          <input type="tel" name="phone" placeholder="Phone number" required data-validate="phone" autocomplete="tel">
+          <div class="error-msg"></div>
         </div>
+        <div class="f-field">
+          <input type="email" name="email" placeholder="Email address" required data-validate="email" autocomplete="email">
+          <div class="error-msg"></div>
+        </div>
+        <div class="f-field">
+          <select name="situation">
+            <option value="" disabled selected>What describes your situation?</option>
+            <option>Facing foreclosure</option>
+            <option>Behind on property taxes / tax lien</option>
+            <option>Property needs major repairs</option>
+            <option>Tired landlord — need to exit</option>
+            <option>Lost home — checking for surplus funds</option>
+            <option>Just want to sell quickly</option>
+            <option>Other / not sure yet</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-submit">Send My Message →</button>
+        <p class="form-note">🔒 Private and confidential. No spam, ever.</p>
+      </form>
+      <div class="form-success" id="hero-success">
+        <div class="s-icon">🙏</div>
+        <h3>Thank you — I'll be in touch soon.</h3>
+        <p>While you wait, download my free guide on all your options.</p>
+        <a href="https://drive.google.com/file/d/1Q3fWSFd4qofkmRL7X3mohoc9a6tiEi1W/view?usp=sharing" target="_blank" class="dl-btn">📘 Download Free Guide</a>
+        <a href="tel:5102555989" class="call-link" onclick="trackCall('post-form')">Or call now: 510-255-5989</a>
       </div>
     </div>
   </div>
 </div>
 
 <!-- SITUATIONS -->
-<section class="situations">
+<section class="sit-section">
   <div class="inner">
-    <span class="section-label">Is This You?</span>
-    <h2>Every Situation Is Different. Here's What We Help With.</h2>
-    <p class="lead-text">There's no judgment here. These are real situations that real Alameda County families face every day — and there are real solutions for each one.</p>
+    <span class="sec-label">Who I Help</span>
+    <h2>Does Any of This Sound Like You?</h2>
+    <p class="sec-lead">Every situation is different — and there is no judgment here.</p>
     <div class="sit-grid">
 
-      <div class="sit-card urgent">
-        <div class="sit-icon">⚖️</div>
-        <div class="sit-title">Facing Foreclosure</div>
-        <div class="sit-question">"I've missed payments. What happens next, and how do I stop it?"</div>
-        <div class="sit-body">In California, once a Notice of Default is filed, you typically have about 111 days before the foreclosure sale. That's not much time — but it's often enough. You may be able to sell before the sale date, negotiate with your lender, or explore other options. The worst thing you can do is wait and hope it goes away. The sooner you act, the more options you have.</div>
-        <a href="tel:5105613700" class="sit-link" onclick="trackCall('foreclosure-card')">Talk to us today about stopping foreclosure →</a>
-      </div>
-
-      <div class="sit-card urgent">
-        <div class="sit-icon">🏛️</div>
-        <div class="sit-title">Behind on Property Taxes / Tax Lien</div>
-        <div class="sit-question">"I owe back taxes and I'm afraid I'll lose my home to the county."</div>
-        <div class="sit-body">In California, if property taxes go unpaid for 5 years, the county can sell the property at a tax defaulted auction. But there are options before it gets there — including selling the home yourself before the auction date and paying off the tax debt from the proceeds. You keep the equity. You stay in control. Acting early makes all the difference.</div>
-        <a href="tel:5105613700" class="sit-link" onclick="trackCall('taxlien-card')">Let's talk about your tax situation →</a>
-      </div>
-
-      <div class="sit-card moderate">
-        <div class="sit-icon">🔧</div>
-        <div class="sit-title">Property in Poor Condition</div>
-        <div class="sit-question">"My home needs major work. I can't afford to fix it, and I don't think I can sell it."</div>
-        <div class="sit-body">You can sell it. We buy homes in any condition — foundation problems, fire or water damage, code violations, hoarding situations, mold, unpermitted additions, you name it. We don't need inspections or repairs. You don't lift a finger. We make you an honest offer based on the property as it stands today.</div>
-        <a href="#bottom-cta" class="sit-link">Get a no-obligation offer on your home →</a>
-      </div>
-
-      <div class="sit-card moderate">
-        <div class="sit-icon">💼</div>
-        <div class="sit-title">Financial Hardship / Job Loss</div>
-        <div class="sit-question">"I've lost income and I can't keep up with the mortgage. I feel stuck."</div>
-        <div class="sit-body">Losing income doesn't mean losing everything. Depending on how much equity you have, selling now — even quickly — can mean walking away with money in your pocket and your credit intact, rather than going through foreclosure. It's not the outcome you planned, but it can be a dignified path forward.</div>
-        <a href="tel:5105613700" class="sit-link" onclick="trackCall('hardship-card')">Talk through your options confidentially →</a>
-      </div>
-
-      <div class="sit-card life">
-        <div class="sit-icon">📋</div>
-        <div class="sit-title">Inherited Property / Probate</div>
-        <div class="sit-question">"I inherited a home I don't want to manage. How do I handle this?"</div>
-        <div class="sit-body">Inheriting a property can be emotionally and logistically overwhelming — especially when there's a mortgage still on it, deferred maintenance, or multiple heirs involved. We work with heirs, estate attorneys, and probate situations regularly. We can make a clean offer that closes the chapter and puts money in everyone's hands.</div>
-        <a href="#bottom-cta" class="sit-link">Learn how we handle inherited properties →</a>
-      </div>
-
-      <div class="sit-card life">
-        <div class="sit-icon">💔</div>
-        <div class="sit-title">Divorce / Life Transition</div>
-        <div class="sit-question">"We need to sell fast as part of a divorce settlement. How does this work?"</div>
-        <div class="sit-body">Divorce is hard enough without a slow, uncertain home sale dragging it out. We can move quickly, work with both parties, and provide a clean sale that lets everyone move on. No open houses, no strangers walking through, no waiting on bank financing that might fall through. Just a clear, honest transaction.</div>
-        <a href="tel:5105613700" class="sit-link" onclick="trackCall('divorce-card')">Talk to us confidentially →</a>
-      </div>
-
-      <div class="sit-card urgent" style="grid-column: 1 / -1; border-left: 4px solid var(--forest); background: #fdf5ee;">
-        <div class="sit-icon">💰</div>
-        <div class="sit-title">Already Lost Your Home to Foreclosure? You May Be Owed Money.</div>
-        <div class="sit-question">"My home was sold at a foreclosure auction. Is there anything I can do now?"</div>
-        <div class="sit-body">Many homeowners don't realize this — but if your home sold at a foreclosure auction for <em>more</em> than what you owed the lender, the difference belongs to you. This is called <strong>foreclosure surplus funds</strong>, and in California, the county holds this money on your behalf. Most former homeowners never claim it — either because they don't know it exists, or because the process feels too complicated to navigate. We can help you find out if surplus funds exist in your case and walk you through how to claim what's rightfully yours.</div>
-        <a href="#surplus-funds" class="sit-link">Learn more about claiming your surplus funds →</a>
-      </div>
-
-    <!-- FORECLOSURE TIMELINE ALERT -->
-    <div class="timeline-alert">
-      <div class="alert-icon">⏰</div>
-      <div>
-        <div class="alert-title">Know Your Foreclosure Timeline in California</div>
-        <div class="alert-body">
-          California is a non-judicial foreclosure state, which means it moves faster than most people expect.
-          <strong>Notice of Default filed → 90 days → Notice of Trustee Sale posted → 21 days → Foreclosure auction.</strong>
-          That's roughly 111 days from start to finish. If you've already received a Notice of Default, your window is narrowing. Call us today — even a 15-minute conversation could change your outcome.
+      <div class="sit-card">
+        <div class="sit-icon-col">⚖️</div>
+        <div class="sit-body">
+          <div class="sit-title">Facing Foreclosure</div>
+          <div class="sit-question">"I've missed payments. How much time do I have, and what can I do?"</div>
+          <div class="sit-text">In California, you may have as little as 111 days from the Notice of Default to the auction. That's not much time — but it's often enough to act. The sooner you reach out, the more doors are still open.</div>
+          <a href="tel:5102555989" class="sit-cta" onclick="trackCall('foreclosure-card')">Let's talk before the clock runs out →</a>
         </div>
       </div>
+
+      <div class="sit-card">
+        <div class="sit-icon-col">🏛️</div>
+        <div class="sit-body">
+          <div class="sit-title">Behind on Property Taxes or Facing a Tax Lien</div>
+          <div class="sit-question">"I owe back taxes. Could I lose my home to the county?"</div>
+          <div class="sit-text">In California, unpaid taxes can eventually lead to a county tax sale. But you have rights — and options. Selling before the sale date can let you pay off the debt and keep whatever equity remains.</div>
+          <a href="tel:5102555989" class="sit-cta" onclick="trackCall('taxlien-card')">Talk through your tax situation →</a>
+        </div>
+      </div>
+
+      <div class="sit-card">
+        <div class="sit-icon-col">🔧</div>
+        <div class="sit-body">
+          <div class="sit-title">Property in Poor Condition You Can't Afford to Fix</div>
+          <div class="sit-question">"My home needs serious work. Can I even sell it like this?"</div>
+          <div class="sit-text">Yes. I buy homes as-is — foundation issues, fire damage, code violations, deferred maintenance. You don't lift a finger. No repairs, no cleanup, no inspections required.</div>
+          <a href="#contact" class="sit-cta">Get a no-obligation offer →</a>
+        </div>
+      </div>
+
+      <div class="sit-card soft">
+        <div class="sit-icon-col">😤</div>
+        <div class="sit-body">
+          <div class="sit-title">Tired of Being a Landlord</div>
+          <div class="sit-question">"I'm done with tenants, repairs, and headaches. How do I get out clean?"</div>
+          <div class="sit-text">I buy tenant-occupied rental properties. You don't need to wait for leases to end or deal with difficult tenants. We handle it, and you walk away with cash.</div>
+          <a href="tel:5102555989" class="sit-cta" onclick="trackCall('landlord-card')">Talk about a clean exit →</a>
+        </div>
+      </div>
+
+      <div class="sit-card soft">
+        <div class="sit-icon-col">💰</div>
+        <div class="sit-body">
+          <div class="sit-title">Already Lost Your Home to Foreclosure?</div>
+          <div class="sit-question">"My home was sold at auction. Is there anything left for me?"</div>
+          <div class="sit-text">There might be. If your home sold for more than what you owed, the difference — called surplus funds — belongs to you by California law. Most former homeowners never know to claim it. I can help you find out.</div>
+          <a href="#surplus" class="sit-cta">Learn about surplus funds →</a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- SURPLUS FUNDS SECTION -->
-<section id="surplus-funds" style="background: var(--forest); color: var(--white); padding: 80px 40px;">
-  <div class="inner">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;">
-      <div>
-        <span class="section-label" style="color: #e8a8b4;">Did You Lose Your Home to Foreclosure?</span>
-        <h2 style="color: var(--white); margin-bottom: 20px;">You May Have Money Waiting for You — and Not Know It.</h2>
-        <div style="font-family: 'Fraunces', serif; font-style: italic; font-size: 18px; color: rgba(255,255,255,0.7); padding-left: 18px; border-left: 3px solid #e8a8b4; margin-bottom: 28px; line-height: 1.55;">
-          "Most people walk away from foreclosure thinking they've lost everything. But if your home sold for more than you owed — the excess belongs to you by law."
-        </div>
-        <p style="font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 18px;">
-          When a home is foreclosed and sold at a trustee auction, the lender is only entitled to recover what they were owed — the loan balance, fees, and costs. If the property sells for more than that amount, the remaining money is called <strong style="color:#fff;">foreclosure surplus funds</strong> — and it legally belongs to the former homeowner.
-        </p>
-        <p style="font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 18px;">
-          In California, these funds are held by the county trustee or the court. There is a claims process to get that money back — but it has deadlines, paperwork, and legal steps that most people don't know how to navigate. The money doesn't come to you automatically. You have to claim it.
-        </p>
-        <p style="font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 32px;">
-          We can help you find out whether surplus funds exist in your case, understand the claims process, and connect you with the right resources to recover what's yours. This is especially common in Alameda County, where rising property values have meant that many foreclosure auction sales have exceeded the debt owed.
-        </p>
-        <a href="tel:5105613700" class="btn-primary" onclick="trackCall('surplus-section')" style="display:inline-flex; max-width: 340px;">
-          📞 Call to See If You're Owed Surplus Funds
-        </a>
-      </div>
-      <div>
-        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); padding: 32px 28px; margin-bottom: 3px;">
-          <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #e8a8b4; margin-bottom: 14px;">How It Works</div>
-          <div style="display: flex; flex-direction: column; gap: 20px;">
-            <div style="display: flex; gap: 16px; align-items: flex-start;">
-              <div style="width: 32px; height: 32px; background: var(--amber); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; flex-shrink: 0; color: #fff;">1</div>
-              <div>
-                <div style="font-family: 'Fraunces', serif; font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 4px;">Your Home Sells at Auction</div>
-                <div style="font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.5;">The trustee sells the property to the highest bidder. If the sale price exceeds your loan balance and fees, a surplus exists.</div>
-              </div>
-            </div>
-            <div style="display: flex; gap: 16px; align-items: flex-start;">
-              <div style="width: 32px; height: 32px; background: var(--amber); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; flex-shrink: 0; color: #fff;">2</div>
-              <div>
-                <div style="font-family: 'Fraunces', serif; font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 4px;">Funds Are Held by the County</div>
-                <div style="font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.5;">The surplus is deposited with the county or court — not automatically returned to you. Most former homeowners never learn it exists.</div>
-              </div>
-            </div>
-            <div style="display: flex; gap: 16px; align-items: flex-start;">
-              <div style="width: 32px; height: 32px; background: var(--amber); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; flex-shrink: 0; color: #fff;">3</div>
-              <div>
-                <div style="font-family: 'Fraunces', serif; font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 4px;">You Have a Window to Claim It</div>
-                <div style="font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.5;">California law gives you a limited time to file a claim. After that window closes, the funds may be forfeited to the state. Acting quickly matters.</div>
-              </div>
-            </div>
-            <div style="display: flex; gap: 16px; align-items: flex-start;">
-              <div style="width: 32px; height: 32px; background: var(--amber); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; flex-shrink: 0; color: #fff;">4</div>
-              <div>
-                <div style="font-family: 'Fraunces', serif; font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 4px;">We Help You Navigate the Process</div>
-                <div style="font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.5;">We'll help you determine if surplus funds exist in your case and guide you through the steps to claim what's rightfully yours.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div style="background: rgba(232,168,180,0.1); border: 1px solid rgba(232,168,180,0.25); padding: 22px 28px;">
-          <div style="font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.7; font-style: italic; font-family: 'Fraunces', serif;">
-            ⚠️ <strong style="color: rgba(255,255,255,0.75); font-style: normal;">Important:</strong> Foreclosure surplus fund recovery involves legal processes and deadlines. KY Property Solutions helps connect former homeowners with this process and can provide guidance, but we recommend working with a licensed attorney for formal claims. Initial consultation with us is always free.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SURPLUS MINI FORM -->
-    <div style="margin-top: 56px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); padding: 36px; max-width: 600px; margin-left: auto; margin-right: auto; text-align: center;">
-      <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #e8a8b4; margin-bottom: 10px;">Free — No Obligation</div>
-      <h3 style="font-family: 'Fraunces', serif; font-size: 22px; color: #fff; margin-bottom: 10px;">Find Out If You're Owed Surplus Funds</h3>
-      <p style="font-size: 14px; color: rgba(255,255,255,0.55); margin-bottom: 28px;">Tell us a little about your situation and we'll reach out to discuss whether surplus funds may apply to your case.</p>
-      <form id="surplus-form" onsubmit="handleSubmit(event,'surplus-form','surplus-success')">
-        <div style="display: flex; flex-direction: column; gap: 10px; text-align: left;">
-          <input class="cta-input" type="text" name="name" placeholder="Your name" required autocomplete="name">
-          <input class="cta-input" type="tel" name="phone" placeholder="Best phone number" required autocomplete="tel">
-          <input class="cta-input" type="email" name="email" placeholder="Email address" autocomplete="email">
-          <input class="cta-input" type="text" name="address" placeholder="Address of the foreclosed property (if known)">
-          <input class="cta-input" type="text" name="foreclosure_date" placeholder="Approximate date of foreclosure auction">
-          <input type="hidden" name="_type" value="surplus_funds_inquiry">
-          <button type="submit" class="btn-primary" style="margin-top: 4px;">Check My Eligibility →</button>
-        </div>
-      </form>
-      <div id="surplus-success" style="display:none; padding: 24px 0;">
-        <div style="font-size: 40px; margin-bottom: 12px;">🙏</div>
-        <h3 style="font-family: 'Fraunces', serif; font-size: 20px; color: #fff; margin-bottom: 8px;">Thank you — we'll be in touch soon.</h3>
-        <p style="font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 16px;">Want to talk sooner? Call us directly:</p>
-        <a href="tel:5105613700" style="color: #e8a8b4; font-weight: 700; font-size: 16px;">📞 510-561-3700</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- OPTIONS COMPARISON -->
+<!-- OPTIONS -->
 <section class="options-section">
   <div class="inner">
-    <span class="section-label" style="color:#e8a8b4;">Know Your Options</span>
-    <h2 style="color:var(--white);">What Are Your Real Choices?</h2>
-    <p class="lead-text">Before you decide anything, it helps to understand what each path actually looks like — not the sales pitch version, but the honest version.</p>
-    <div class="options-grid">
-      <div class="option-card">
-        <span class="option-tag">Option 1</span>
-        <div class="option-name">List With an Agent</div>
-        <ul class="option-list">
-          <li><span class="li-check">✓</span> Potentially highest sale price</li>
-          <li><span class="li-x">✗</span> 60–120 days to close on average</li>
-          <li><span class="li-x">✗</span> 5–6% agent commissions</li>
-          <li><span class="li-x">✗</span> Must pass buyer's inspection</li>
-          <li><span class="li-x">✗</span> Repairs often required</li>
-          <li><span class="li-x">✗</span> Sale can fall through at any time</li>
-          <li><span class="li-x">✗</span> May not close before foreclosure</li>
+    <span class="sec-label" style="color:#e8a8b4;">Know Your Options</span>
+    <h2 style="color:#fff;">What Are Your Real Choices?</h2>
+    <p class="sec-lead" style="color:rgba(255,255,255,0.6);">An honest look at the three paths most homeowners have — no spin.</p>
+    <div class="opt-grid">
+      <div class="opt-card">
+        <span class="opt-tag">Option 1</span>
+        <div class="opt-name">List With an Agent</div>
+        <ul class="opt-list">
+          <li><span class="li-y">✓</span> Potentially highest price</li>
+          <li><span class="li-n">✗</span> 60–120 days to close</li>
+          <li><span class="li-n">✗</span> 5–6% in commissions</li>
+          <li><span class="li-n">✗</span> Repairs often required</li>
+          <li><span class="li-n">✗</span> Sale can fall through</li>
+          <li><span class="li-n">✗</span> May not beat a deadline</li>
         </ul>
       </div>
-      <div class="option-card highlight">
-        <span class="option-tag">Option 2 · What We Offer</span>
-        <div class="option-name">Sell Direct to KY Property Solutions</div>
-        <ul class="option-list">
-          <li><span class="li-check">✓</span> Close in 7–30 days</li>
-          <li><span class="li-check">✓</span> Zero commissions or fees</li>
-          <li><span class="li-check">✓</span> No repairs or cleaning</li>
-          <li><span class="li-check">✓</span> You choose the closing date</li>
-          <li><span class="li-check">✓</span> No financing contingencies</li>
-          <li><span class="li-check">✓</span> Can help stop foreclosure</li>
-          <li><span class="li-neutral">~</span> Offer may be below market value</li>
+      <div class="opt-card featured">
+        <span class="opt-tag">Option 2 — Work With Us</span>
+        <div class="opt-name">Let Us Help You Find a Way Out</div>
+        <ul class="opt-list">
+          <li><span class="li-y">✓</span> Resolved in as little as 7–30 days</li>
+          <li><span class="li-y">✓</span> Zero fees, costs, or commissions</li>
+          <li><span class="li-y">✓</span> Nothing out of your pocket — ever</li>
+          <li><span class="li-y">✓</span> No repairs, cleanup, or prep work</li>
+          <li><span class="li-y">✓</span> You choose when it's done</li>
+          <li><span class="li-y">✓</span> We handle the details — you move on</li>
         </ul>
       </div>
-      <div class="option-card">
-        <span class="option-tag">Option 3</span>
-        <div class="option-name">Do Nothing / Wait</div>
-        <ul class="option-list">
-          <li><span class="li-x">✗</span> Foreclosure damages credit for 7 years</li>
-          <li><span class="li-x">✗</span> You lose all equity at auction</li>
-          <li><span class="li-x">✗</span> Tax penalties continue to grow</li>
-          <li><span class="li-x">✗</span> Property condition worsens</li>
-          <li><span class="li-x">✗</span> Stress and uncertainty continue</li>
-          <li><span class="li-x">✗</span> Fewer options the longer you wait</li>
+      <div class="opt-card">
+        <span class="opt-tag">Option 3</span>
+        <div class="opt-name">Wait and Hope</div>
+        <ul class="opt-list">
+          <li><span class="li-n">✗</span> Foreclosure damages credit 7 yrs</li>
+          <li><span class="li-n">✗</span> Lose all equity at auction</li>
+          <li><span class="li-n">✗</span> Tax penalties keep growing</li>
+          <li><span class="li-n">✗</span> Options narrow every day</li>
+          <li><span class="li-n">✗</span> Stress continues</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="process-section">
+<!-- SURPLUS FUNDS -->
+<section class="surplus-section" id="surplus">
   <div class="inner">
-    <span class="section-label">How It Works</span>
-    <h2>A Simple, Honest Process</h2>
-    <p class="lead-text">No pressure. No obligation at any step. You stay in control the entire time.</p>
-    <div class="process-steps">
-      <div class="process-step">
-        <div class="step-circle">1</div>
-        <div class="step-title-sm">You Reach Out</div>
-        <div class="step-desc-sm">Call us or fill out a form. Tell us a little about your situation — no details required, just a conversation.</div>
+    <span class="sec-label">Already Lost Your Home?</span>
+    <h2>You May Have Money Waiting for You</h2>
+    <p class="sec-lead">If your home was sold at a foreclosure auction in California, this could apply to you.</p>
+    <div class="surplus-cards">
+      <div class="surplus-card">
+        <div class="surplus-card-title">What are surplus funds?</div>
+        <div class="surplus-card-text">When a foreclosed home sells at auction for more than the amount owed to the lender, the extra money is called surplus funds. By California law, that money belongs to the former homeowner — not the bank, not the investor who bought the property.</div>
       </div>
-      <div class="process-step">
-        <div class="step-circle">2</div>
-        <div class="step-title-sm">We Listen &amp; Learn</div>
-        <div class="step-desc-sm">We ask a few questions about the property and your timeline. There's no judgment and no sales pressure.</div>
+      <div class="surplus-card">
+        <div class="surplus-card-title">Why most people never collect</div>
+        <div class="surplus-card-text">The money doesn't come to you automatically. It sits with the county or court waiting to be claimed. Most former homeowners don't know it exists — and there's a deadline to claim it before the funds are turned over to the state.</div>
       </div>
-      <div class="process-step">
-        <div class="step-circle">3</div>
-        <div class="step-title-sm">We Present Options</div>
-        <div class="step-desc-sm">We walk you through what we can offer and what other options you might have. Honestly, even if it means we're not the right fit.</div>
+    </div>
+    <div class="surplus-cta-bar">
+      <div class="surplus-cta-text">
+        <h3>Find out if you're owed money — free.</h3>
+        <p>Initial conversation is always free and confidential. No commitment required.</p>
       </div>
-      <div class="process-step">
-        <div class="step-circle">4</div>
-        <div class="step-title-sm">You Decide</div>
-        <div class="step-desc-sm">If a cash offer makes sense, we move at your pace. If not, we've still helped you understand your situation better.</div>
-      </div>
+      <a href="tel:5102555989" class="surplus-btn" onclick="trackCall('surplus')">📞 Call 510-255-5989</a>
     </div>
   </div>
 </section>
 
-<!-- ABOUT / TRUST -->
-<section class="about-section">
+<!-- BIO -->
+<section class="bio-section">
   <div class="inner">
-    <div class="about-grid">
-      <div class="about-left">
-        <div class="about-portrait">
-          <div class="portrait-text">Add your photo here — a real, friendly photo builds enormous trust with distressed sellers.</div>
+    <div class="bio-grid">
+      <div>
+        <div class="bio-photo">
+          <div class="photo-hint">Add your photo here</div>
         </div>
-        <div class="about-name-plate">
-          <div>
-            <div class="about-name">KY Property Solutions</div>
-            <div class="about-title-sm">Local Alameda County Property Buyers</div>
-          </div>
-          <div style="font-size:24px;">🏡</div>
+        <div class="bio-name-tag">
+          <strong>KY Property Solutions</strong>
+          <span>Alameda County, CA</span>
         </div>
       </div>
-      <div class="about-right">
-        <span class="section-label">Who We Are</span>
-        <div class="about-quote">"I know what it feels like to lose your family's home. I started this business so other families wouldn't have to go through what mine did."</div>
-        <p class="about-body">I'm a Bay Area native, and I grew up in Alameda County. When I was younger, my family lost our home to foreclosure — not because we were irresponsible, but because we were targeted by predatory lenders who designed loans meant to fail. We didn't understand what was happening until it was too late. That experience never left me.</p>
-        <p class="about-body">Years later, I founded KY Property Solutions with one mission: to make sure other Alameda County families have access to honest, clear information about their options before the clock runs out. I've seen firsthand how the system can work against homeowners — and I've made it my life's work to level that playing field.</p>
-        <p class="about-body">When you call us, you're not talking to a call center. You're talking to someone who has lived this, who understands the fear and the shame and the confusion — and who genuinely wants to help you find a way through it, whatever that looks like for your family.</p>
-        <div class="trust-pills">
-          <div class="trust-pill">🏠 Bay Area Native, Alameda County Local</div>
-          <div class="trust-pill">💛 Personal Mission, Not Just Business</div>
-          <div class="trust-pill">📋 No Obligation, Ever</div>
-          <div class="trust-pill">🔒 Confidential &amp; Judgment-Free</div>
-          <div class="trust-pill">💬 Honest Answers, Even If We're Not the Right Fit</div>
+      <div>
+        <span class="sec-label">Who I Am</span>
+        <div class="bio-quote">"I've been where you are. That's why I do this."</div>
+        <p class="bio-text">I'm a Bay Area native who grew up right here in Alameda County. My family lost our home to foreclosure because of predatory lending practices — and nobody told us what our options were until it was too late. That experience changed me.</p>
+        <p class="bio-text">I started KY Property Solutions so other Alameda County families don't go through what mine did. When you call me, you're talking to someone who understands the fear, the confusion, and the shame that can come with a housing crisis — because I've lived it.</p>
+        <p class="bio-text">I'll be honest with you about your options, even if the best answer isn't working with me. My goal is to make sure you walk away informed, not pressured.</p>
+        <div class="bio-pills">
+          <div class="bio-pill">🏠 Bay Area Native</div>
+          <div class="bio-pill">💛 Personal Mission</div>
+          <div class="bio-pill">🔒 Confidential &amp; Judgment-Free</div>
+          <div class="bio-pill">📋 No Obligation, Ever</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CITIES -->
-<section class="cities-section">
-  <div class="inner">
-    <span class="section-label">Where We Help</span>
-    <h2>All of Alameda County</h2>
-    <p class="lead-text">We work with homeowners throughout the entire county — whatever city you're in, we can help.</p>
-    <div class="cities-grid">
-      <div class="city-item"><span class="city-dot"></span>Oakland</div>
-      <div class="city-item"><span class="city-dot"></span>Fremont</div>
-      <div class="city-item"><span class="city-dot"></span>Hayward</div>
-      <div class="city-item"><span class="city-dot"></span>Berkeley</div>
-      <div class="city-item"><span class="city-dot"></span>San Leandro</div>
-      <div class="city-item"><span class="city-dot"></span>Livermore</div>
-      <div class="city-item"><span class="city-dot"></span>Pleasanton</div>
-      <div class="city-item"><span class="city-dot"></span>Union City</div>
-      <div class="city-item"><span class="city-dot"></span>Newark</div>
-      <div class="city-item"><span class="city-dot"></span>Alameda</div>
-      <div class="city-item"><span class="city-dot"></span>Dublin</div>
-      <div class="city-item"><span class="city-dot"></span>Emeryville</div>
-      <div class="city-item"><span class="city-dot"></span>Piedmont</div>
-      <div class="city-item"><span class="city-dot"></span>San Lorenzo</div>
-      <div class="city-item"><span class="city-dot"></span>Castro Valley</div>
-      <div class="city-item"><span class="city-dot"></span>+ All Surrounding Areas</div>
-    </div>
-  </div>
-</section>
-
-<!-- BOTTOM CTA FORM -->
-<section class="cta-section" id="bottom-cta">
+<!-- BOTTOM CTA -->
+<section class="cta-section" id="cta">
   <div class="inner">
     <div class="cta-inner">
-      <span class="section-label">Take the First Step</span>
-      <h2>Let's Talk About Your Situation</h2>
-      <p class="lead-text">No commitment. No pressure. Just a real conversation about your options. You can always say no.</p>
-      <form id="main-cta-form" onsubmit="handleSubmit(event,'main-cta-form','main-cta-success')">
+      <span class="sec-label" style="color:#e8a8b4;">Take the First Step</span>
+      <h2 style="color:#fff;">Let's Have an Honest Conversation</h2>
+      <p class="sec-lead" style="color:rgba(255,255,255,0.6);margin:0 auto 36px;">No pressure. No commitment. Just real answers about what your options are.</p>
+      <a href="tel:5102555989" class="cta-call" onclick="trackCall('bottom')">📞 510-255-5989</a>
+      <p class="cta-note">Call or text anytime · Free consultation · Confidential</p>
+      <form id="cta-form" onsubmit="handleSubmit(event,'cta-form','cta-success')">
         <div class="cta-form">
-          <input class="cta-input" type="text" name="name" placeholder="Your name" required autocomplete="name" data-validate="name" data-error-required="Please enter your name.">
-          <div class="error-msg" style="color:#ffaaaa;"></div>
-          <input class="cta-input" type="tel" name="phone" placeholder="Best phone number to reach you" required autocomplete="tel" data-validate="phone" data-error-required="Please enter your phone number.">
-          <div class="error-msg" style="color:#ffaaaa;"></div>
-          <input class="cta-input" type="email" name="email" placeholder="Email address" required autocomplete="email" data-validate="email" data-error-required="Please enter your email address.">
-          <div class="error-msg" style="color:#ffaaaa;"></div>
-          <input class="cta-input" type="text" name="address" placeholder="Property address (optional — we won't share it)" autocomplete="street-address">
+          <input class="cta-input" type="text" name="name" placeholder="Your name" required data-validate="name" autocomplete="name">
+          <div class="cta-err"></div>
+          <input class="cta-input" type="tel" name="phone" placeholder="Best phone number" required data-validate="phone" autocomplete="tel">
+          <div class="cta-err"></div>
+          <input class="cta-input" type="email" name="email" placeholder="Email address" required data-validate="email" autocomplete="email">
+          <div class="cta-err"></div>
           <select class="cta-input" name="situation">
-            <option value="" disabled selected>What best describes your situation?</option>
-            <option>Facing foreclosure / missed mortgage payments</option>
+            <option value="" disabled selected>What describes your situation?</option>
+            <option>Facing foreclosure</option>
             <option>Behind on property taxes / tax lien</option>
             <option>Property needs major repairs</option>
-            <option>Going through divorce</option>
-            <option>Inherited property</option>
-            <option>Tired landlord / want to exit</option>
-            <option>Financial hardship / job loss</option>
-            <option>Already lost home — want to check for surplus funds</option>
+            <option>Tired landlord — need to exit</option>
+            <option>Lost home — checking for surplus funds</option>
             <option>Just want to sell quickly</option>
-            <option>Other</option>
+            <option>Other / not sure yet</option>
           </select>
-          <button type="submit" class="btn-primary" style="margin-top: 4px;">Request a Free Consultation →</button>
-          <div class="cta-or">— or call us directly —</div>
-          <a href="tel:5105613700" class="btn-call-big" onclick="trackCall('bottom-cta')">📞 510-561-3700</a>
+          <button type="submit" class="btn-submit" style="background:#c8843a;">Request a Free Call Back →</button>
         </div>
       </form>
-      <div id="main-cta-success" style="display:none; text-align:center; padding: 40px 0;">
-        <div style="font-size:48px; margin-bottom:16px;">🙏</div>
-        <h3 style="font-family:'Fraunces',serif; font-size:26px; color:#fff; margin-bottom:12px;">Thank you for reaching out.</h3>
-        <p style="color:rgba(255,255,255,0.6); margin-bottom:24px; font-size:15px;">We'll be in touch within a few hours. If you need to talk sooner, please call us directly.</p>
-        <a href="tel:5105613700" class="btn-call-big" onclick="trackCall('post-form-bottom')" style="max-width:320px; margin: 0 auto;">📞 510-561-3700</a>
+      <div id="cta-success" style="display:none;padding:32px 0;text-align:center;">
+        <div style="font-size:42px;margin-bottom:14px;">🙏</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;color:#fff;margin-bottom:10px;">Thank you — I'll be in touch soon.</h3>
+        <p style="color:rgba(255,255,255,0.55);margin-bottom:20px;font-size:14px;">Need to talk sooner? Call me directly:</p>
+        <a href="tel:5102555989" style="color:#e8a8b4;font-weight:700;font-size:18px;text-decoration:none;" onclick="trackCall('post-cta-form')">📞 510-255-5989</a>
       </div>
-      <p class="cta-reassurance">We never share your information. This is a private, confidential conversation.</p>
+      <p class="cta-reassure">Your information is private and will never be shared.</p>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <strong>KY Property Solutions</strong> · Serving All of Alameda County, California<br>
-  📞 <a href="tel:5105613700">510-561-3700</a> &nbsp;·&nbsp; <a href="#guide">Get Free Guide</a> &nbsp;·&nbsp; <a href="#">Privacy Policy</a><br>
-  <div class="footer-disclaimer">
-    KY Property Solutions is a real estate investment company, not a licensed real estate agent or broker. We purchase properties directly. The information on this page is for general educational purposes and does not constitute legal or financial advice. If you are facing foreclosure, we encourage you to also consult with a HUD-approved housing counselor at 1-800-569-4287 (free service) or a licensed attorney.
+  <strong>KY Property Solutions</strong> · Alameda County, California<br>
+  <a href="tel:5102555989">510-255-5989</a> &nbsp;·&nbsp;
+  <a href="https://drive.google.com/file/d/1Q3fWSFd4qofkmRL7X3mohoc9a6tiEi1W/view?usp=sharing" target="_blank">Download Free Guide</a> &nbsp;·&nbsp;
+  <a href="#contact">Get in Touch</a>
+  <div class="footer-disc">
+    KY Property Solutions is a real estate investment company, not a licensed real estate agent or broker. We purchase properties directly. Information on this site is for general educational purposes only and does not constitute legal or financial advice. For free housing counseling, call HUD at 1-800-569-4287.
   </div>
-  <div style="margin-top: 16px; font-size: 11px; color: rgba(255,255,255,0.15);">© 2026 KY Property Solutions. All rights reserved.</div>
+  <div style="margin-top:12px;font-size:10px;color:rgba(255,255,255,0.12);">© 2026 KY Property Solutions. All rights reserved.</div>
 </footer>
 
-<!-- ============================================================
-     TRACKING + FORM LOGIC
-     ============================================================ -->
-<style>
-/* ── FORM VALIDATION STYLES ── */
-.field-error {
-  border-color: #c0392b !important;
-  background: #fff8f8 !important;
-}
-.error-msg {
-  font-size: 12px;
-  color: #c0392b;
-  margin-top: -6px;
-  margin-bottom: 8px;
-  font-family: 'Mulish', sans-serif;
-  display: none;
-  padding-left: 2px;
-}
-.error-msg.visible { display: block; }
-</style>
-
 <script>
-// ── CALL TRACKING ──────────────────────────────────────────────
-function trackCall(loc) {
-  if (typeof fbq !== 'undefined') {
-    fbq('track', 'Lead', { content_name: 'phone_call', content_category: loc });
-  }
-  if (typeof gtag !== 'undefined') {
-    gtag('event', 'click_to_call', { event_category: 'engagement', event_label: loc });
-  }
+function trackCall(loc){
+  if(typeof fbq!=='undefined') fbq('track','Lead',{content_name:'phone_call',content_category:loc});
+  if(typeof gtag!=='undefined') gtag('event','click_to_call',{event_category:'engagement',event_label:loc});
+}
+function trackDownload(loc){
+  if(typeof fbq!=='undefined') fbq('track','Lead',{content_name:'guide_download',content_category:loc});
+  if(typeof gtag!=='undefined') gtag('event','guide_download',{event_category:'engagement',event_label:loc});
 }
 
-// ── VALIDATION HELPERS ─────────────────────────────────────────
-function isValidEmail(email) {
-  // Must have text @ text . text — no consecutive dots, no spaces
-  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.trim());
+function isValidEmail(v){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());}
+function isValidPhone(v){return v.replace(/\D/g,'').length>=10;}
+function isValidName(v){return v.trim().length>=2;}
+
+function validateField(input){
+  const type=input.dataset.validate;
+  const val=input.value;
+  const err=input.nextElementSibling;
+  if(!err) return true;
+  const isCta=err.classList.contains('cta-err');
+  const showCls=isCta?'show':'show';
+  const setErr=(msg)=>{input.classList.add('field-error');err.textContent=msg;err.classList.add('show');return false;};
+  const clear=()=>{input.classList.remove('field-error');err.classList.remove('show');return true;};
+  if(!val.trim()) return setErr('This field is required.');
+  if(type==='email'&&!isValidEmail(val)) return setErr('Please enter a valid email address.');
+  if(type==='phone'&&!isValidPhone(val)) return setErr('Please enter a valid 10-digit phone number.');
+  if(type==='name'&&!isValidName(val)) return setErr('Please enter your name.');
+  return clear();
 }
 
-function isValidPhone(phone) {
-  // Strip all non-digits, must have 10–11 digits (US numbers)
-  const digits = phone.replace(/\D/g, '');
-  return digits.length >= 10 && digits.length <= 11;
-}
-
-function isValidName(name) {
-  return name.trim().length >= 2;
-}
-
-function setError(input, msgEl, message) {
-  input.classList.add('field-error');
-  msgEl.textContent = message;
-  msgEl.classList.add('visible');
-}
-
-function clearError(input, msgEl) {
-  input.classList.remove('field-error');
-  msgEl.classList.remove('visible');
-}
-
-// Live clear errors as user types/fixes
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('input[data-validate]').forEach(input => {
-    const msgEl = input.nextElementSibling;
-    input.addEventListener('input', () => {
-      if (input.value.trim()) clearError(input, msgEl);
-    });
-    input.addEventListener('blur', () => {
-      validateField(input, msgEl);
+document.addEventListener('DOMContentLoaded',()=>{
+  document.querySelectorAll('[data-validate]').forEach(input=>{
+    input.addEventListener('blur',()=>validateField(input));
+    input.addEventListener('input',()=>{
+      if(input.value.trim()){
+        input.classList.remove('field-error');
+        const err=input.nextElementSibling;
+        if(err) err.classList.remove('show');
+      }
     });
   });
 });
 
-function validateField(input, msgEl) {
-  const type = input.dataset.validate;
-  const val  = input.value.trim();
-  if (!val) {
-    setError(input, msgEl, input.dataset.errorRequired || 'This field is required.');
-    return false;
-  }
-  if (type === 'email' && !isValidEmail(val)) {
-    setError(input, msgEl, 'Please enter a valid email address (e.g. name@example.com).');
-    return false;
-  }
-  if (type === 'phone' && !isValidPhone(val)) {
-    setError(input, msgEl, 'Please enter a valid 10-digit US phone number.');
-    return false;
-  }
-  if (type === 'name' && !isValidName(val)) {
-    setError(input, msgEl, 'Please enter your first name.');
-    return false;
-  }
-  clearError(input, msgEl);
-  return true;
-}
+const ENDPOINT='https://formspree.io/f/xrejkgwa';
 
-function validateForm(form) {
-  let valid = true;
-  form.querySelectorAll('input[data-validate]').forEach(input => {
-    const msgEl = input.nextElementSibling;
-    if (!validateField(input, msgEl)) valid = false;
-  });
-  return valid;
-}
-
-// ── FORM SUBMISSION ────────────────────────────────────────────
-// Formspree ID: xrejkgwa
-// GUIDE PDF LINK: Replace https://drive.google.com/file/d/1Q3fWSFd4qofkmRL7X3mohoc9a6tiEi1W/view?usp=sharing below with your
-// Google Drive share link once you upload the PDF there.
-// How to get the link:
-//   1. Upload ky-homeowner-guide.pdf to Google Drive
-//   2. Right-click → Share → "Anyone with the link" → Copy link
-//   3. Paste it below replacing https://drive.google.com/file/d/1Q3fWSFd4qofkmRL7X3mohoc9a6tiEi1W/view?usp=sharing
-const GUIDE_URL  = 'https://drive.google.com/file/d/1Q3fWSFd4qofkmRL7X3mohoc9a6tiEi1W/view?usp=sharing';
-const ENDPOINT   = 'https://formspree.io/f/xrejkgwa';
-
-async function handleSubmit(e, formId, successId) {
+async function handleSubmit(e,formId,successId){
   e.preventDefault();
-  const form    = document.getElementById(formId);
-  const success = document.getElementById(successId);
-  const btn     = form.querySelector('button[type="submit"]');
-
-  // ── Run validation ──
-  if (!validateForm(form)) {
-    // Scroll to first error
-    const firstError = form.querySelector('.field-error');
-    if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    return;
-  }
-
-  const payload = Object.fromEntries(new FormData(form).entries());
-  payload._source = formId;
-  payload._url    = window.location.href;
-  payload._time   = new Date().toISOString();
-
-  btn.textContent = 'Sending…';
-  btn.disabled = true;
-
-  try {
-    const res = await fetch(ENDPOINT, {
-      method: 'POST',
-      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    });
-    if (!res.ok) throw new Error('failed');
-  } catch(_) {
-    // silently continue — show success regardless to avoid losing leads
-  }
-
-  // ── Show success + auto-download guide for guide forms ──
-  form.style.display  = 'none';
-  success.style.display = 'block';
-
-  const isGuideForm = formId === 'hero-guide-form' || formId === 'bottom-ebook-form';
-  if (isGuideForm && GUIDE_URL) {
-    // Auto-open PDF in new tab after 800ms so it feels intentional
-    setTimeout(() => window.open(GUIDE_URL, '_blank'), 800);
-  }
-
-  // ── Fire tracking ──
-  if (typeof fbq !== 'undefined') {
-    fbq('track', 'Lead', {
-      content_name: isGuideForm ? 'guide_download' : 'consultation_request',
-      value: 75, currency: 'USD'
-    });
-    if (!isGuideForm) fbq('track', 'SubmitApplication');
-  }
-  if (typeof gtag !== 'undefined') {
-    gtag('event', 'generate_lead', { event_category: 'form', event_label: formId, value: 75 });
-  }
+  const form=document.getElementById(formId);
+  const success=document.getElementById(successId);
+  const btn=form.querySelector('button[type="submit"]');
+  let valid=true;
+  form.querySelectorAll('[data-validate]').forEach(input=>{if(!validateField(input)) valid=false;});
+  if(!valid){form.querySelector('.field-error')?.scrollIntoView({behavior:'smooth',block:'center'});return;}
+  const payload=Object.fromEntries(new FormData(form).entries());
+  payload._source=formId;
+  payload._time=new Date().toISOString();
+  btn.textContent='Sending…';
+  btn.disabled=true;
+  try{await fetch(ENDPOINT,{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(payload)});}catch(_){}
+  form.style.display='none';
+  success.style.display='block';
+  if(typeof fbq!=='undefined') fbq('track','Lead',{value:75,currency:'USD',content_name:formId});
+  if(typeof gtag!=='undefined') gtag('event','generate_lead',{event_label:formId,value:75});
 }
 
-// ── SCROLL DEPTH TRACKING ──────────────────────────────────────
-const fired = {};
-window.addEventListener('scroll', () => {
-  const pct = Math.round(window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100);
-  [25,50,75,90].forEach(m => {
-    if (pct >= m && !fired[m]) {
-      fired[m] = true;
-      if (typeof fbq !== 'undefined') fbq('trackCustom', 'ScrollDepth', { depth: m });
-      if (typeof gtag !== 'undefined') gtag('event', 'scroll', { percent_scrolled: m });
-    }
-  });
-}, { passive: true });
+const fired={};
+window.addEventListener('scroll',()=>{
+  const pct=Math.round(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100);
+  [25,50,75,90].forEach(m=>{if(pct>=m&&!fired[m]){fired[m]=true;if(typeof fbq!=='undefined') fbq('trackCustom','ScrollDepth',{depth:m});}});
+},{passive:true});
 
-// ── ENGAGEMENT TIMER ───────────────────────────────────────────
-setTimeout(() => {
-  if (typeof fbq !== 'undefined') fbq('trackCustom', 'EngagedVisitor', { seconds: 60 });
-  if (typeof gtag !== 'undefined') gtag('event', 'engaged_60s', { event_category: 'engagement' });
-}, 60000);
+setTimeout(()=>{if(typeof fbq!=='undefined') fbq('trackCustom','EngagedVisitor',{seconds:60});},60000);
 </script>
-
 </body>
 </html>
