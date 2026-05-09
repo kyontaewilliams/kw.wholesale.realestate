@@ -57,11 +57,33 @@ body{font-family:'Jost',sans-serif;font-weight:400;color:var(--text);background:
 .topbar a:hover{text-decoration:underline;}
 
 /* NAV */
-nav{background:var(--white);border-bottom:2px solid var(--burg);padding:16px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,0.06);}
-.logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--burg);line-height:1.1;}
+nav{background:var(--white);border-bottom:2px solid var(--burg);padding:0 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,0.06);height:64px;}
+.logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--burg);line-height:1.1;text-decoration:none;}
 .logo span{display:block;font-size:10px;font-weight:400;font-family:'Jost',sans-serif;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin-top:2px;}
-.nav-phone{background:var(--burg);color:var(--white);padding:10px 22px;font-size:14px;font-weight:600;text-decoration:none;letter-spacing:0.02em;transition:background 0.2s;}
+.nav-right{display:flex;align-items:center;gap:0;}
+.nav-menu{display:flex;align-items:center;list-style:none;gap:0;margin:0;padding:0;}
+.nav-menu>li{position:relative;height:64px;display:flex;align-items:center;}
+.nav-menu>li>a{font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;padding:0 16px;height:64px;display:flex;align-items:center;letter-spacing:0.02em;transition:color 0.2s;white-space:nowrap;border-bottom:2px solid transparent;}
+.nav-menu>li>a:hover{color:var(--burg);border-bottom-color:var(--blush);}
+.nav-menu>li:hover .dropdown{display:block;}
+.dropdown{display:none;position:absolute;top:64px;left:0;background:var(--white);border:1px solid var(--border);border-top:2px solid var(--burg);min-width:240px;box-shadow:0 8px 24px rgba(0,0,0,0.1);z-index:200;}
+.dropdown a{display:block;padding:12px 18px;font-size:13px;color:var(--text);text-decoration:none;border-bottom:1px solid #f0e8dc;transition:background 0.15s,color 0.15s;line-height:1.4;}
+.dropdown a:last-child{border-bottom:none;}
+.dropdown a:hover{background:var(--cream);color:var(--burg);}
+.dropdown-label{font-size:9.5px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--blush);padding:10px 18px 4px;display:block;}
+.nav-phone{background:var(--burg);color:var(--white);padding:10px 22px;font-size:14px;font-weight:600;text-decoration:none;letter-spacing:0.02em;transition:background 0.2s;margin-left:16px;white-space:nowrap;}
 .nav-phone:hover{background:var(--burg2);}
+.nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;color:var(--burg);}
+@media(max-width:700px){
+  nav{padding:0 20px;}
+  .nav-menu{display:none;position:absolute;top:64px;left:0;right:0;background:var(--white);flex-direction:column;border-bottom:2px solid var(--burg);box-shadow:0 4px 12px rgba(0,0,0,0.1);}
+  .nav-menu.open{display:flex;}
+  .nav-menu>li{height:auto;width:100%;}
+  .nav-menu>li>a{height:auto;padding:14px 20px;border-bottom:1px solid var(--border) !important;width:100%;}
+  .dropdown{display:none !important;}
+  .nav-hamburger{display:block;}
+  .nav-phone{display:none;}
+}
 
 /* HERO */
 .hero{background:var(--burg);color:var(--white);padding:72px 40px 80px;position:relative;overflow:hidden;}
@@ -213,11 +235,46 @@ footer strong{color:rgba(255,255,255,0.55);}
 </div>
 
 <nav>
-  <div class="logo">
-    KY Property Solutions
-    <span>Alameda County, California</span>
+  <a href="/" class="logo">KY Property Solutions<span>Alameda County, California</span></a>
+  <div class="nav-right">
+    <ul class="nav-menu" id="navMenu">
+      <li>
+        <a href="/foreclosure-timeline">Foreclosure Help ▾</a>
+        <div class="dropdown">
+          <span class="dropdown-label">Foreclosure Resources</span>
+          <a href="/foreclosure-timeline">How to Stop Foreclosure in CA</a>
+          <a href="/notice-of-default">Received a Notice of Default?</a>
+          <a href="/surplus-funds">Lost Your Home? Claim Surplus Funds</a>
+        </div>
+      </li>
+      <li>
+        <a href="/behind-on-property-taxes">Tax & Financial Help ▾</a>
+        <div class="dropdown">
+          <span class="dropdown-label">Tax & Financial Resources</span>
+          <a href="/behind-on-property-taxes">Behind on Property Taxes?</a>
+          <a href="/sell-house-code-violations">Selling a Distressed Property</a>
+        </div>
+      </li>
+      <li>
+        <a href="/sell-inherited-house">Property Help ▾</a>
+        <div class="dropdown">
+          <span class="dropdown-label">Property Resources</span>
+          <a href="/sell-inherited-house">Inherited a House?</a>
+          <a href="/sell-rental-property">Tired Landlord? Exit Strategies</a>
+          <a href="/sell-house-code-violations">Home Needs Major Repairs?</a>
+        </div>
+      </li>
+      <li>
+        <a href="/surplus-funds">Surplus Funds</a>
+      </li>
+    </ul>
+    <button class="nav-hamburger" onclick="document.getElementById('navMenu').classList.toggle('open')" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+    <a href="tel:5102555989" class="nav-phone" onclick="trackCall('nav')">📞 510-255-5989</a>
   </div>
-  <a href="tel:5102555989" class="nav-phone" onclick="trackCall('nav')">📞 510-255-5989</a>
 </nav>
 
 <!-- HERO -->
@@ -295,7 +352,7 @@ footer strong{color:rgba(255,255,255,0.55);}
           <div class="sit-title">Facing Foreclosure</div>
           <div class="sit-question">"I've missed payments. How much time do I have, and what can I do?"</div>
           <div class="sit-text">In California, you may have as little as 111 days from the Notice of Default to the auction. That's not much time — but it's often enough to act. The sooner you reach out, the more doors are still open.</div>
-          <a href="tel:5102555989" class="sit-cta" onclick="trackCall('foreclosure-card')">Let's talk before the clock runs out →</a>
+          <a href="/foreclosure-timeline" class="sit-cta">Learn about your options and timeline →</a>
         </div>
       </div>
 
@@ -305,7 +362,7 @@ footer strong{color:rgba(255,255,255,0.55);}
           <div class="sit-title">Behind on Property Taxes or Facing a Tax Lien</div>
           <div class="sit-question">"I owe back taxes. Could I lose my home to the county?"</div>
           <div class="sit-text">In California, unpaid taxes can eventually lead to a county tax sale. But you have rights — and options. Selling before the sale date can let you pay off the debt and keep whatever equity remains.</div>
-          <a href="tel:5102555989" class="sit-cta" onclick="trackCall('taxlien-card')">Talk through your tax situation →</a>
+          <a href="/behind-on-property-taxes" class="sit-cta">Learn about your options with property taxes →</a>
         </div>
       </div>
 
@@ -315,7 +372,7 @@ footer strong{color:rgba(255,255,255,0.55);}
           <div class="sit-title">Property in Poor Condition You Can't Afford to Fix</div>
           <div class="sit-question">"My home needs serious work. Can I even sell it like this?"</div>
           <div class="sit-text">Yes. I buy homes as-is — foundation issues, fire damage, code violations, deferred maintenance. You don't lift a finger. No repairs, no cleanup, no inspections required.</div>
-          <a href="#contact" class="sit-cta">Get a no-obligation offer →</a>
+          <a href="/sell-house-code-violations" class="sit-cta">See your options for selling as-is →</a>
         </div>
       </div>
 
@@ -325,7 +382,7 @@ footer strong{color:rgba(255,255,255,0.55);}
           <div class="sit-title">Tired of Being a Landlord</div>
           <div class="sit-question">"I'm done with tenants, repairs, and headaches. How do I get out clean?"</div>
           <div class="sit-text">I buy tenant-occupied rental properties. You don't need to wait for leases to end or deal with difficult tenants. We handle it, and you walk away with cash.</div>
-          <a href="tel:5102555989" class="sit-cta" onclick="trackCall('landlord-card')">Talk about a clean exit →</a>
+          <a href="/sell-rental-property" class="sit-cta">Learn about your landlord exit options →</a>
         </div>
       </div>
 
@@ -335,7 +392,7 @@ footer strong{color:rgba(255,255,255,0.55);}
           <div class="sit-title">Already Lost Your Home to Foreclosure?</div>
           <div class="sit-question">"My home was sold at auction. Is there anything left for me?"</div>
           <div class="sit-text">There might be. If your home sold for more than what you owed, the difference — called surplus funds — belongs to you by California law. Most former homeowners never know to claim it. I can help you find out.</div>
-          <a href="#surplus" class="sit-cta">Learn about surplus funds →</a>
+          <a href="/surplus-funds" class="sit-cta">Learn about claiming your surplus funds →</a>
         </div>
       </div>
 
@@ -410,7 +467,10 @@ footer strong{color:rgba(255,255,255,0.55);}
         <h3>Find out if you're owed money — free.</h3>
         <p>Initial conversation is always free and confidential. No commitment required.</p>
       </div>
-      <a href="tel:5102555989" class="surplus-btn" onclick="trackCall('surplus')">📞 Call 510-255-5989</a>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0;">
+        <a href="/surplus-funds" style="background:rgba(255,255,255,0.15);color:#fff;padding:14px 20px;font-size:14px;font-weight:600;text-decoration:none;transition:background 0.2s;white-space:nowrap;" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">Learn More →</a>
+        <a href="tel:5102555989" class="surplus-btn" onclick="trackCall('surplus')">📞 Call 510-255-5989</a>
+      </div>
     </div>
   </div>
 </section>
@@ -490,6 +550,15 @@ footer strong{color:rgba(255,255,255,0.55);}
   <a href="tel:5102555989">510-255-5989</a> &nbsp;·&nbsp;
   <a href="#contact-section">Get Free Guide</a> &nbsp;·&nbsp;
   <a href="#contact-section">Get in Touch</a>
+  <div style="margin:16px auto;max-width:640px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px;font-size:12px;">
+    <a href="/foreclosure-timeline" style="color:rgba(255,255,255,0.4);text-decoration:none;">How to Stop Foreclosure</a>
+    <a href="/notice-of-default" style="color:rgba(255,255,255,0.4);text-decoration:none;">Notice of Default Help</a>
+    <a href="/surplus-funds" style="color:rgba(255,255,255,0.4);text-decoration:none;">Surplus Funds Recovery</a>
+    <a href="/behind-on-property-taxes" style="color:rgba(255,255,255,0.4);text-decoration:none;">Behind on Property Taxes</a>
+    <a href="/sell-house-code-violations" style="color:rgba(255,255,255,0.4);text-decoration:none;">Sell House As-Is</a>
+    <a href="/sell-inherited-house" style="color:rgba(255,255,255,0.4);text-decoration:none;">Inherited Property Help</a>
+    <a href="/sell-rental-property" style="color:rgba(255,255,255,0.4);text-decoration:none;">Tired Landlord Exit</a>
+  </div>
   <div class="footer-disc">
     KY Property Solutions is a real estate investment company, not a licensed real estate agent or broker. We purchase properties directly. Information on this site is for general educational purposes only and does not constitute legal or financial advice. For free housing counseling, call HUD at 1-800-569-4287.
   </div>
