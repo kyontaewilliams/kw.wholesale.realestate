@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tenant Pre-Screening | KY Property Solutions</title>
+<meta name="description" content="Start your pre-screening with KY Property Solutions. A quick, confidential inquiry to help match you with the right home.">
+
+<!-- ============================================================
+     GOOGLE ANALYTICS (matches your site's existing property).
+     Remove if your GitHub Pages template already injects this
+     site-wide, to avoid double-counting.
+     ============================================================ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PE4JHZ4TN2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PE4JHZ4TN2');
+</script>
+
+<!-- ============================================================
+     META PIXEL (matches your site's existing pixel).
+     Remove if injected site-wide already.
+     ============================================================ -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '954200090826689');
+  fbq('track', 'PageView');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#1c1410;
+    --pine:#6b1f2a;
+    --pine-700:#4d1520;
+    --pine-600:#8a2a38;
+    --amber:#c8843a;
+    --amber-600:#b4772c;
+    --amber-soft:#f3ead8;
+    --paper:#ffffff;
+    --mist:#faf6f0;
+    --mist-2:#e8dcc8;
+    --line:#ddd0bc;
+    --muted:#6b5a50;
+    --danger:#c0392b;
+    --radius:14px;
+    --shadow:0 1px 2px rgba(107,31,42,.05), 0 14px 34px -14px rgba(77,21,32,.18);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Jost',system-ui,-apple-system,sans-serif;
+    color:var(--ink);
+    background:var(--mist);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{max-width:720px;margin:0 auto;padding:0 20px}
+
+  /* ---------- Header ---------- */
+  header.site{
+    background:var(--pine);
+    color:#fbeee8;
+  }
+  .site .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:18px;padding-bottom:18px;gap:16px;
+  }
+  .brand{display:flex;flex-direction:column;line-height:1.1}
+  .brand b{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:21px;letter-spacing:.2px;color:#fff}
+  .brand span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#e0b4bc;margin-top:3px}
+  .eho{
+    display:flex;align-items:center;gap:8px;font-size:11px;color:#dfb2ba;
+    letter-spacing:.02em;text-align:right;
+  }
+  .eho svg{flex:none}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:52px 0 36px;text-align:center}
+  .hero .eyebrow{
+    display:inline-block;font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--amber-600);font-weight:600;margin-bottom:16px;
+  }
+  .hero h1{
+    font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:clamp(30px,6vw,44px);
+    line-height:1.08;letter-spacing:-.5px;color:var(--pine);margin-bottom:14px;
+  }
+  .hero p{color:var(--muted);font-size:17px;max-width:520px;margin:0 auto}
+  .hero .meta{
+    margin-top:20px;display:inline-flex;gap:20px;flex-wrap:wrap;justify-content:center;
+    font-size:13px;color:var(--pine-600);font-weight:500;
+  }
+  .hero .meta span{display:inline-flex;align-items:center;gap:7px}
+  .dot{width:5px;height:5px;border-radius:50%;background:var(--amber);flex:none}
+
+  /* ---------- Progress ---------- */
+  .progress{margin:8px auto 22px;max-width:720px;padding:0 20px}
+  .progress-track{display:flex;gap:8px}
+  .progress-seg{
+    flex:1;height:5px;border-radius:99px;background:var(--mist-2);
+    overflow:hidden;position:relative;
+  }
+  .progress-seg i{
+    position:absolute;inset:0;background:var(--amber);
+    transform:scaleX(0);transform-origin:left;border-radius:99px;
+    transition:transform .45s cubic-bezier(.4,0,.2,1);
+  }
+  .progress-seg.done i{transform:scaleX(1)}
+  .progress-seg.active i{transform:scaleX(.5)}
+  .progress-label{
+    margin-top:10px;font-size:12.5px;color:var(--muted);
+    display:flex;justify-content:space-between;
+  }
+  .progress-label b{color:var(--pine);font-weight:600}
+
+  /* ---------- Card / steps ---------- */
+  .card{
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:34px 34px 28px;margin-bottom:40px;
+  }
+  .step{display:none;animation:fade .4s ease}
+  .step.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  .step-head{margin-bottom:22px}
+  .step-kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-600);font-weight:600}
+  .step-head h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:24px;color:var(--pine);margin:6px 0 4px;letter-spacing:-.2px}
+  .step-head p{color:var(--muted);font-size:14.5px}
+
+  .field{margin-bottom:20px}
+  .field:last-child{margin-bottom:0}
+  label.q{display:block;font-weight:600;font-size:14.5px;color:var(--ink);margin-bottom:9px}
+  label.q .opt{font-weight:450;color:var(--muted);font-size:13px}
+  .hint{font-size:12.5px;color:var(--muted);margin-top:7px;line-height:1.5}
+
+  input[type=text],input[type=email],input[type=tel],input[type=date],input[type=number],textarea,select{
+    width:100%;font-family:inherit;font-size:15px;color:var(--ink);
+    background:var(--mist);border:1.5px solid transparent;border-radius:10px;
+    padding:12px 14px;transition:border-color .15s,background .15s;
+  }
+  input:focus,textarea:focus,select:focus{
+    outline:none;background:#fff;border-color:var(--pine-600);
+    box-shadow:0 0 0 3px rgba(107,31,42,.14);
+  }
+  textarea{resize:vertical;min-height:88px}
+  select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%235E6A64' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
+
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+  /* selectable option cards */
+  .opts{display:grid;gap:9px}
+  .opts.cols2{grid-template-columns:1fr 1fr}
+  .opt-card{
+    position:relative;display:flex;align-items:center;gap:11px;
+    border:1.5px solid var(--line);border-radius:11px;padding:12px 14px;
+    cursor:pointer;transition:border-color .15s,background .15s;font-size:14.5px;
+    background:#fff;user-select:none;
+  }
+  .opt-card:hover{border-color:var(--pine-600);background:#fdfaf5}
+  .opt-card input{position:absolute;opacity:0;pointer-events:none}
+  .opt-card .mark{
+    width:19px;height:19px;border-radius:50%;border:2px solid var(--line);
+    flex:none;transition:all .15s;position:relative;
+  }
+  .opt-card.check .mark{border-radius:6px}
+  .opt-card input:checked ~ .mark{border-color:var(--amber);background:var(--amber)}
+  .opt-card input:checked ~ .mark::after{
+    content:"";position:absolute;inset:0;margin:auto;width:7px;height:7px;
+    border-radius:50%;background:#fff;
+  }
+  .opt-card.check input:checked ~ .mark::after{
+    width:5px;height:9px;border:2px solid #fff;border-top:0;border-left:0;
+    border-radius:0;transform:rotate(45deg) translate(-1px,-1px);background:none;top:2px;
+  }
+  .opt-card input:checked ~ .txt{font-weight:600}
+  .opt-card:has(input:checked){border-color:var(--amber);background:#FDF8F0}
+  .opt-card input:focus-visible ~ .mark{box-shadow:0 0 0 3px rgba(201,138,60,.28)}
+
+  /* consent */
+  .consent{
+    display:flex;gap:12px;align-items:flex-start;background:var(--mist);
+    border-radius:11px;padding:15px 16px;font-size:13.5px;color:var(--muted);line-height:1.5;
+  }
+  .consent input{margin-top:3px;width:17px;height:17px;flex:none;accent-color:var(--pine-600)}
+  .consent a{color:var(--pine-600)}
+
+  .err{color:var(--danger);font-size:12.5px;margin-top:8px;display:none}
+  .err.show{display:block}
+
+  /* nav buttons */
+  .nav{display:flex;justify-content:space-between;align-items:center;margin-top:28px;gap:14px}
+  button{font-family:inherit;cursor:pointer;border:none;font-size:15px;font-weight:600;border-radius:10px;transition:all .15s}
+  .btn-next{background:var(--pine);color:#fff;padding:13px 26px}
+  .btn-next:hover{background:var(--pine-700)}
+  .btn-next:active{transform:translateY(1px)}
+  .btn-back{background:none;color:var(--muted);padding:13px 8px}
+  .btn-back:hover{color:var(--ink)}
+  .btn-submit{background:var(--amber);color:#231607;padding:13px 30px}
+  .btn-submit:hover{background:var(--amber-600);color:#fff}
+  .btn-submit:disabled{opacity:.6;cursor:not-allowed}
+
+  /* review */
+  .review-grid{display:grid;gap:2px;background:var(--line);border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-bottom:6px}
+  .review-row{display:grid;grid-template-columns:44% 56%;background:#fff;padding:11px 15px;gap:12px;font-size:13.5px}
+  .review-row dt{color:var(--muted)}
+  .review-row dd{color:var(--ink);font-weight:500}
+
+  /* confirmation */
+  .done-screen{display:none;text-align:center;padding:20px 10px 12px}
+  .done-screen.active{display:block;animation:fade .5s ease}
+  .done-badge{
+    width:66px;height:66px;border-radius:50%;background:var(--amber-soft);
+    display:flex;align-items:center;justify-content:center;margin:0 auto 20px;
+  }
+  .done-screen h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:26px;color:var(--pine);margin-bottom:10px}
+  .done-screen p{color:var(--muted);max-width:420px;margin:0 auto 8px;font-size:15px}
+  .done-screen .callus{margin-top:20px;font-size:14px}
+  .done-screen .callus a{color:var(--pine-600);font-weight:600;text-decoration:none}
+
+  /* footer */
+  footer.site{padding:30px 0 46px;text-align:center}
+  footer.site p{font-size:12px;color:var(--muted);max-width:600px;margin:0 auto 8px;line-height:1.6}
+  footer.site .contact{font-size:13px;color:var(--pine-600);font-weight:500;margin-bottom:14px}
+  footer.site a{color:var(--pine-600)}
+
+  @media(max-width:560px){
+    .card{padding:24px 20px}
+    .row2,.opts.cols2{grid-template-columns:1fr}
+    .hero{padding:38px 0 26px}
+    .review-row{grid-template-columns:1fr;gap:2px}
+    .review-row dt{font-size:12px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <div class="brand">
+      <b>KY Property Solutions</b>
+      <span>Bay Area Rentals</span>
+    </div>
+    <div class="eho">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#dfb2ba" stroke-width="2"><path d="M3 10l9-7 9 7v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+      Equal Housing<br>Opportunity
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Rental Pre-Screening</span>
+    <h1>Let's see if this is the right fit</h1>
+    <p>A quick, confidential inquiry so we can match you with the right home and move things forward. It takes about two minutes.</p>
+    <div class="meta">
+      <span><i class="dot"></i>~2 minutes</span>
+      <span><i class="dot"></i>Not a formal application</span>
+      <span><i class="dot"></i>No credit pull</span>
+    </div>
+  </div>
+</section>
+
+<div class="progress" id="progress">
+  <div class="progress-track">
+    <div class="progress-seg" data-seg="0"><i></i></div>
+    <div class="progress-seg" data-seg="1"><i></i></div>
+    <div class="progress-seg" data-seg="2"><i></i></div>
+    <div class="progress-seg" data-seg="3"><i></i></div>
+    <div class="progress-seg" data-seg="4"><i></i></div>
+  </div>
+  <div class="progress-label"><span>Step <b id="stepNum">1</b> of 5</span><span id="stepName">Your details</span></div>
+</div>
+
+<div class="wrap">
+  <div class="card">
+    <form id="screenForm" novalidate>
+
+      <!-- STEP 1 -->
+      <div class="step active" data-step="0">
+        <div class="step-head">
+          <div class="step-kicker">Step 1</div>
+          <h2>Your details</h2>
+          <p>So we know who to follow up with.</p>
+        </div>
+        <div class="row2">
+          <div class="field"><label class="q">First name</label><input type="text" name="First Name" data-required></div>
+          <div class="field"><label class="q">Last name</label><input type="text" name="Last Name" data-required></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label class="q">Email</label><input type="email" name="Email" data-required></div>
+          <div class="field"><label class="q">Phone</label><input type="tel" name="Phone" data-required></div>
+        </div>
+        <div class="field">
+          <label class="q">Which property are you interested in?</label>
+          <input type="text" name="Property of Interest" placeholder="Property address or listing" data-required>
+          <div class="err">Please complete the required fields above to continue.</div>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="step" data-step="1">
+        <div class="step-head">
+          <div class="step-kicker">Step 2</div>
+          <h2>Your timeline</h2>
+          <p>Helps us understand where you are in your search.</p>
+        </div>
+        <div class="field">
+          <label class="q">When are you looking to move in?</label>
+          <input type="date" name="Desired Move-In Date" data-required>
+        </div>
+        <div class="field">
+          <label class="q">How soon do you need a home?</label>
+          <div class="opts" data-group>
+            <label class="opt-card"><input type="radio" name="Move Urgency" value="Ready to move now" data-required><span class="mark"></span><span class="txt">I'm ready to move now</span></label>
+            <label class="opt-card"><input type="radio" name="Move Urgency" value="Within 30 days"><span class="mark"></span><span class="txt">Within 30 days</span></label>
+            <label class="opt-card"><input type="radio" name="Move Urgency" value="30 to 60 days"><span class="mark"></span><span class="txt">In 30–60 days</span></label>
+            <label class="opt-card"><input type="radio" name="Move Urgency" value="Just exploring"><span class="mark"></span><span class="txt">Just exploring for now</span></label>
+          </div>
+        </div>
+        <div class="field">
+          <label class="q">Are you familiar with the neighborhood?</label>
+          <div class="opts cols2" data-group>
+            <label class="opt-card"><input type="radio" name="Familiar With Neighborhood" value="Yes, I know it well" data-required><span class="mark"></span><span class="txt">Yes, I know it well</span></label>
+            <label class="opt-card"><input type="radio" name="Familiar With Neighborhood" value="Somewhat"><span class="mark"></span><span class="txt">Somewhat</span></label>
+            <label class="opt-card"><input type="radio" name="Familiar With Neighborhood" value="Not yet"><span class="mark"></span><span class="txt">Not yet</span></label>
+            <label class="opt-card"><input type="radio" name="Familiar With Neighborhood" value="Plan to visit"><span class="mark"></span><span class="txt">I plan to visit</span></label>
+          </div>
+          <div class="hint">Before scheduling a viewing, we ask that you please drive through the neighborhood — or take a virtual look via an online map and street view — to make sure the area is a good fit for you.</div>
+        </div>
+        <div class="field">
+          <label class="q">Preferred lease length</label>
+          <div class="opts cols2" data-group>
+            <label class="opt-card"><input type="radio" name="Lease Length" value="12 months" data-required><span class="mark"></span><span class="txt">12 months</span></label>
+            <label class="opt-card"><input type="radio" name="Lease Length" value="6 months"><span class="mark"></span><span class="txt">6 months</span></label>
+          </div>
+          <div class="err">Please answer the required questions to continue.</div>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="step" data-step="2">
+        <div class="step-head">
+          <div class="step-kicker">Step 3</div>
+          <h2>The household</h2>
+          <p>Just the basics for occupancy and home care.</p>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label class="q">Total number of occupants</label>
+            <input type="number" name="Total Occupants" min="1" max="20" data-required>
+          </div>
+          <div class="field">
+            <label class="q">Vehicles needing parking</label>
+            <input type="number" name="Vehicles" min="0" max="10" data-required>
+          </div>
+        </div>
+        <div class="field">
+          <label class="q">Any pets? <span class="opt">Service and assistance animals are not pets and don't need to be listed here.</span></label>
+          <div class="opts cols2" data-group>
+            <label class="opt-card"><input type="radio" name="Pets" value="No pets" data-required><span class="mark"></span><span class="txt">No pets</span></label>
+            <label class="opt-card"><input type="radio" name="Pets" value="Cat(s)"><span class="mark"></span><span class="txt">Cat(s)</span></label>
+            <label class="opt-card"><input type="radio" name="Pets" value="Dog(s)"><span class="mark"></span><span class="txt">Dog(s)</span></label>
+            <label class="opt-card"><input type="radio" name="Pets" value="Other / multiple"><span class="mark"></span><span class="txt">Other / multiple</span></label>
+          </div>
+          <div class="hint">If you have a pet, tell us the type, breed, and weight in the notes at the end — most of our homes are pet-considerate.</div>
+        </div>
+        <div class="field">
+          <label class="q">Is this a smoking or non-smoking household?</label>
+          <div class="opts cols2" data-group>
+            <label class="opt-card"><input type="radio" name="Smoking" value="Non-smoking" data-required><span class="mark"></span><span class="txt">Non-smoking</span></label>
+            <label class="opt-card"><input type="radio" name="Smoking" value="Smoking"><span class="mark"></span><span class="txt">Smoking</span></label>
+          </div>
+          <div class="err">Please answer the required questions to continue.</div>
+        </div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="step" data-step="3">
+        <div class="step-head">
+          <div class="step-kicker">Step 4</div>
+          <h2>Qualifying basics</h2>
+          <p>High-level and self-reported — no documents or credit check at this stage.</p>
+        </div>
+        <div class="field">
+          <label class="q">Employment status</label>
+          <div class="opts cols2" data-group>
+            <label class="opt-card"><input type="radio" name="Employment" value="Employed" data-required><span class="mark"></span><span class="txt">Employed</span></label>
+            <label class="opt-card"><input type="radio" name="Employment" value="Self-employed"><span class="mark"></span><span class="txt">Self-employed</span></label>
+            <label class="opt-card"><input type="radio" name="Employment" value="Retired"><span class="mark"></span><span class="txt">Retired</span></label>
+            <label class="opt-card"><input type="radio" name="Employment" value="Student"><span class="mark"></span><span class="txt">Student</span></label>
+            <label class="opt-card"><input type="radio" name="Employment" value="Between jobs"><span class="mark"></span><span class="txt">Between jobs</span></label>
+            <label class="opt-card"><input type="radio" name="Employment" value="Other"><span class="mark"></span><span class="txt">Other</span></label>
+          </div>
+        </div>
+        <div class="field">
+          <label class="q">Estimated total monthly household income</label>
+          <div class="opts" data-group>
+            <label class="opt-card"><input type="radio" name="Monthly Income" value="Under $6,000" data-required><span class="mark"></span><span class="txt">Under $6,000</span></label>
+            <label class="opt-card"><input type="radio" name="Monthly Income" value="$6,000 – $8,000"><span class="mark"></span><span class="txt">$6,000 – $8,000</span></label>
+            <label class="opt-card"><input type="radio" name="Monthly Income" value="$8,000 – $10,000"><span class="mark"></span><span class="txt">$8,000 – $10,000</span></label>
+            <label class="opt-card"><input type="radio" name="Monthly Income" value="$10,000 – $13,000"><span class="mark"></span><span class="txt">$10,000 – $13,000</span></label>
+            <label class="opt-card"><input type="radio" name="Monthly Income" value="Over $13,000"><span class="mark"></span><span class="txt">Over $13,000</span></label>
+          </div>
+          <div class="hint">A general range is fine. Income from any lawful source counts equally.</div>
+        </div>
+        <div class="field">
+          <label class="q">Do you have a housing subsidy? <span class="opt">Section 8 or other program funding.</span></label>
+          <div class="opts cols2" data-group>
+            <label class="opt-card check"><input type="radio" name="Housing Subsidy" value="Yes" data-required id="subsidyYes"><span class="mark"></span><span class="txt">Yes</span></label>
+            <label class="opt-card check"><input type="radio" name="Housing Subsidy" value="No"><span class="mark"></span><span class="txt">No</span></label>
+          </div>
+          <div class="hint">We welcome all lawful sources of income, including housing vouchers and subsidies — this does not affect your eligibility. We ask only so we can coordinate with your housing program if you move forward.</div>
+          <div class="field subsidy-detail" id="subsidyDetail" style="display:none;margin-top:14px">
+            <label class="q">What type of subsidy do you have?</label>
+            <input type="text" name="Subsidy Type" placeholder="e.g., Section 8 Housing Choice Voucher, VASH, county program">
+          </div>
+        </div>
+        <div class="field">
+          <label class="q">How would you describe your credit? <span class="opt">Self-reported estimate.</span></label>
+          <div class="opts" data-group>
+            <label class="opt-card"><input type="radio" name="Credit Self-Report" value="Excellent (720+)" data-required><span class="mark"></span><span class="txt">Excellent (720+)</span></label>
+            <label class="opt-card"><input type="radio" name="Credit Self-Report" value="Good (660–719)"><span class="mark"></span><span class="txt">Good (660–719)</span></label>
+            <label class="opt-card"><input type="radio" name="Credit Self-Report" value="Fair (600–659)"><span class="mark"></span><span class="txt">Fair (600–659)</span></label>
+            <label class="opt-card"><input type="radio" name="Credit Self-Report" value="Rebuilding (below 600)"><span class="mark"></span><span class="txt">Rebuilding (below 600)</span></label>
+            <label class="opt-card"><input type="radio" name="Credit Self-Report" value="Not sure"><span class="mark"></span><span class="txt">Not sure</span></label>
+          </div>
+        </div>
+        <div class="field">
+          <label class="q">Your current housing situation</label>
+          <div class="opts cols2" data-group>
+            <label class="opt-card"><input type="radio" name="Current Housing" value="Currently renting" data-required><span class="mark"></span><span class="txt">Currently renting</span></label>
+            <label class="opt-card"><input type="radio" name="Current Housing" value="Currently own"><span class="mark"></span><span class="txt">Currently own</span></label>
+            <label class="opt-card"><input type="radio" name="Current Housing" value="With family / friends"><span class="mark"></span><span class="txt">With family / friends</span></label>
+            <label class="opt-card"><input type="radio" name="Current Housing" value="First-time renter"><span class="mark"></span><span class="txt">First-time renter</span></label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="consent" style="background:var(--mist);color:var(--muted)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B4772C" stroke-width="2" style="flex:none;margin-top:1px"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            <span>Proof of income and rental references aren't needed right now — those will be requested during the formal application process if you move forward.</span>
+          </div>
+          <div class="err">Please answer the required questions to continue.</div>
+        </div>
+      </div>
+
+      <!-- STEP 5 -->
+      <div class="step" data-step="4">
+        <div class="step-head">
+          <div class="step-kicker">Step 5</div>
+          <h2>Review &amp; send</h2>
+          <p>Add anything you'd like us to know, then send it over.</p>
+        </div>
+        <div class="field">
+          <label class="q">Anything else we should know? <span class="opt">Optional</span></label>
+          <textarea name="Additional Notes" placeholder="Pet details, move reason, questions, timing — whatever's helpful."></textarea>
+        </div>
+        <div class="field">
+          <label class="q">How did you hear about us? <span class="opt">Optional</span></label>
+          <select name="Referral Source">
+            <option value="">Select one…</option>
+            <option>Zillow</option>
+            <option>Apartments.com</option>
+            <option>Facebook / Marketplace</option>
+            <option>Craigslist</option>
+            <option>Drove by / sign</option>
+            <option>Referred by someone</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <div class="review-grid" id="reviewGrid"></div>
+        </div>
+
+        <div class="field">
+          <label class="consent">
+            <input type="checkbox" id="consent" data-required>
+            <span>I understand this is a preliminary inquiry, not a rental application, and doesn't guarantee approval. I consent to be contacted about available homes. KY Property Solutions is an equal housing opportunity provider.</span>
+          </label>
+          <div class="err">Please confirm the acknowledgment to send your inquiry.</div>
+        </div>
+
+        <!-- hidden Formspree helpers -->
+        <input type="hidden" name="_subject" id="subjectField" value="New Tenant Pre-Screening Inquiry">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      </div>
+
+      <!-- NAV -->
+      <div class="nav">
+        <button type="button" class="btn-back" id="backBtn" style="visibility:hidden">← Back</button>
+        <button type="button" class="btn-next" id="nextBtn">Continue →</button>
+        <button type="submit" class="btn-submit" id="submitBtn" style="display:none">Send inquiry</button>
+      </div>
+    </form>
+
+    <!-- CONFIRMATION -->
+    <div class="done-screen" id="doneScreen">
+      <div class="done-badge">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B4772C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+      </div>
+      <h2>Thanks — we've got it</h2>
+      <p>Your pre-screening is on its way to our team. If it looks like a strong match, we'll reach out to set up next steps.</p>
+      <p>Keep an eye on your email and phone over the next day or two.</p>
+      <div class="callus">Have a question in the meantime? Call or text <a href="tel:+15102555989">(510) 255-5989</a></div>
+    </div>
+  </div>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <p class="contact">KY Property Solutions · (510) 255-5989 · <a href="https://kypropertysolutions.com">kypropertysolutions.com</a></p>
+    <p>KY Property Solutions is an equal housing opportunity provider. We do not discriminate on the basis of race, color, religion, sex, sexual orientation, gender identity, familial status, national origin, ancestry, disability, marital status, source of income, or any other characteristic protected by federal, state, or local law.</p>
+    <p>This form is a preliminary inquiry used to match prospective residents with available homes. It is not a rental application and does not create any tenancy or obligation.</p>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   CONFIG — set your Formspree endpoint here.
+   Pre-filled with your existing form ID. For clean routing,
+   consider creating a DEDICATED Formspree form for screening
+   (so these don't mix with your ebook leads) and swap the ID.
+   ============================================================ */
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xrejkgwa";
+
+const form = document.getElementById('screenForm');
+const steps = [...document.querySelectorAll('.step')];
+const segs  = [...document.querySelectorAll('.progress-seg')];
+const stepNames = ['Your details','Your timeline','The household','Qualifying basics','Review & send'];
+const nextBtn = document.getElementById('nextBtn');
+const backBtn = document.getElementById('backBtn');
+const submitBtn = document.getElementById('submitBtn');
+let current = 0;
+
+function render(){
+  steps.forEach((s,i)=>s.classList.toggle('active', i===current));
+  segs.forEach((seg,i)=>{
+    seg.classList.toggle('done', i<current);
+    seg.classList.toggle('active', i===current);
+  });
+  document.getElementById('stepNum').textContent = current+1;
+  document.getElementById('stepName').textContent = stepNames[current];
+  backBtn.style.visibility = current===0 ? 'hidden' : 'visible';
+  const last = current===steps.length-1;
+  nextBtn.style.display = last ? 'none' : 'inline-block';
+  submitBtn.style.display = last ? 'inline-block' : 'none';
+  if(last) buildReview();
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function validateStep(i){
+  const step = steps[i];
+  let ok = true;
+  // required text/number/date/email
+  step.querySelectorAll('input[data-required], select[data-required]').forEach(el=>{
+    if(el.type==='radio' || el.type==='checkbox') return;
+    if(!el.value.trim()){ ok=false; el.style.borderColor='var(--danger)'; }
+    else el.style.borderColor='';
+    if(el.type==='email' && el.value && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(el.value)){ ok=false; el.style.borderColor='var(--danger)'; }
+  });
+  // required radio groups (first radio in group carries data-required)
+  step.querySelectorAll('input[type=radio][data-required]').forEach(el=>{
+    const chosen = step.querySelector(`input[name="${CSS.escape(el.name)}"]:checked`);
+    if(!chosen) ok=false;
+  });
+  // required checkbox (consent)
+  const consent = step.querySelector('#consent[data-required]');
+  if(consent && !consent.checked) ok=false;
+
+  step.querySelectorAll('.err').forEach(e=>e.classList.toggle('show', !ok));
+  return ok;
+}
+
+nextBtn.addEventListener('click', ()=>{
+  if(!validateStep(current)) return;
+  if(current < steps.length-1){ current++; render(); }
+});
+backBtn.addEventListener('click', ()=>{ if(current>0){ current--; render(); } });
+
+// clear error styling as user fixes things
+form.addEventListener('input', e=>{
+  if(e.target.style) e.target.style.borderColor='';
+});
+
+// reveal the subsidy detail box only when "Yes" is selected
+form.querySelectorAll('input[name="Housing Subsidy"]').forEach(r=>{
+  r.addEventListener('change', ()=>{
+    document.getElementById('subsidyDetail').style.display =
+      document.getElementById('subsidyYes').checked ? 'block' : 'none';
+  });
+});
+
+// build the review summary from all named fields
+function buildReview(){
+  const grid = document.getElementById('reviewGrid');
+  grid.innerHTML = '';
+  const data = collect();
+  const order = ['First Name','Last Name','Email','Phone','Property of Interest',
+    'Desired Move-In Date','Move Urgency','Familiar With Neighborhood','Lease Length',
+    'Total Occupants','Vehicles','Pets','Smoking',
+    'Employment','Monthly Income','Housing Subsidy','Subsidy Type','Credit Self-Report','Current Housing'];
+  order.forEach(k=>{
+    if(data[k]){
+      const row = document.createElement('div');
+      row.className='review-row';
+      row.innerHTML = `<dt>${k}</dt><dd>${escapeHtml(data[k])}</dd>`;
+      grid.appendChild(row);
+    }
+  });
+}
+
+function collect(){
+  const fd = new FormData(form);
+  const o = {};
+  for(const [k,v] of fd.entries()){ if(!k.startsWith('_') && v) o[k]=v; }
+  return o;
+}
+function escapeHtml(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+// submit -> Formspree (AJAX), then show confirmation
+form.addEventListener('submit', async (e)=>{
+  e.preventDefault();
+  if(!validateStep(current)) return;
+
+  // label the email subject with the applicant's name + property
+  const d = collect();
+  document.getElementById('subjectField').value =
+    `New Tenant Pre-Screening — ${d['First Name']||''} ${d['Last Name']||''} — ${d['Property of Interest']||''}`.trim();
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending…';
+
+  try{
+    const res = await fetch(FORMSPREE_ENDPOINT, {
+      method:'POST',
+      headers:{'Accept':'application/json'},
+      body:new FormData(form)
+    });
+    if(res.ok){
+      if(window.fbq) fbq('track','Lead');
+      if(window.gtag) gtag('event','generate_lead',{form:'prescreening'});
+      form.style.display='none';
+      document.getElementById('progress').style.display='none';
+      document.getElementById('doneScreen').classList.add('active');
+      window.scrollTo({top:0,behavior:'smooth'});
+    }else{
+      throw new Error('Bad response');
+    }
+  }catch(err){
+    submitBtn.disabled=false;
+    submitBtn.textContent='Send inquiry';
+    alert("Something went wrong sending your inquiry. Please try again, or call us at (510) 255-5989.");
+  }
+});
+
+render();
+</script>
+</body>
+</html>
